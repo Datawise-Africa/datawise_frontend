@@ -17,7 +17,7 @@ const OurServices = () => {
             {ourServices.slice(0, 3).map((item) => (
               <li className="mb-3 py-3" key={item.id}>
                 <div className="flex items-center border-t border-n-6">
-                  <img src={check} width={24} height={24} alt="check"/>
+                  <img src={check} width={24} height={24} alt="check" loading="lazy"/>
                   <h6 className="body-2 ml-5">{item.title}</h6>
                 </div>
                 {/* <p className="body-2 mt-3 text-n-4">{item.description}</p> */}
@@ -35,7 +35,7 @@ const OurServices = () => {
               <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
                 <div className="w-[6rem] aspect-square m-auto p-[0.2rem] bg-conic-gradient rounded-full">
                   <div className="flex items-center justify-center w-full h-full bg-n-8 rounded-full">
-                    <img src={datawise_image} alt="Datawise" width={48} height={48} />
+                    <img src={datawise_image} loading="lazy" alt="Datawise" width={48} height={48} />
                   </div>
                 </div>
               </div>
@@ -52,6 +52,7 @@ const OurServices = () => {
                         alt={item.title} 
                         width={88} height={62} 
                         className="m-auto hover:blur:sm transition-all duration-300"
+                        loading="lazy"
                       />
 
                       <div 

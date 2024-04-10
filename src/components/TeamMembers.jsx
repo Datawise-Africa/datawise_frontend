@@ -15,7 +15,7 @@ const TeamMembers = () => {
             >
               <div className="relative">
                 <div className="flex items-center mt-auto">
-                    <img src={item.image} alt={item.name} width={300} height={150} className="rounded-xl m-auto hover:blur:sm transition-all duration-300"/>
+                    <img src={item.image} alt={item.name} width={300} height={150} className="rounded-xl m-auto hover:blur:sm transition-all duration-300" loading="lazy"/>
 
                     <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-start bg-black bg-opacity-70 text-white text-sm font-bold opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <p className="z-10">{item.description}</p>

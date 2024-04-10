@@ -20,8 +20,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio
-
-{/* <h5 className='h5 mb-5'>{item.title}</h5>
-                        <div className="flex items-center mt-auto">
-                            <img src={item.logo} width={180} height={100} alt={item.title} />
-                        </div> */}
