@@ -1,4 +1,4 @@
-import SectionSvg from "../assets/svg/SectionSvg";
+import SectionSvg from "../../public/assets/svg/SectionSvg";
 
 const Section = ({className, id, crosses, crossesOffset, customPaddings, children}) => {
   return (

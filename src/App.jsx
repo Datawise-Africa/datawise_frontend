@@ -1,4 +1,4 @@
-import ButtonGradient from './assets/svg/ButtonGradient';
+import ButtonGradient from '../public/assets/svg/ButtonGradient';
 import AboutUs from './components/AboutUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';

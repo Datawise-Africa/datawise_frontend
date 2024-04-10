@@ -2,9 +2,9 @@ import Section from './Section';
 import Heading from './Heading';
 import { aboutUs } from '../constants';
 import { GradientLight } from "./designs/AboutUs";
-import ClipPath from "../assets/svg/ClipPath";
+import ClipPath from "../../public/assets/svg/ClipPath";
 
-import Arrow from "../assets/svg/Arrow";
+import Arrow from "../../public/assets/svg/Arrow";
 
 const AboutUs = () => {
   return (

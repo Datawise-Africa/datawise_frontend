@@ -1,7 +1,7 @@
 import Section from "./Section";
-import check from "../assets/check.svg";
+import check from "/assets/check.svg";
 import Button from "./Button";
-import datawise_image from "../assets/datawise-image.jpeg";
+import datawise_image from "/assets/datawise-image.jpeg";
 
 import { ourServices, serviceText } from "../constants";
 import { LeftCurve, RightCurve } from "./designs/OurServices";

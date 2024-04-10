@@ -1,6 +1,5 @@
 import Section from "./Section"
 import { portfolioText } from "../constants"
-import Button from "./Button"
 import PortfolioSection from "./PortfolioSection"
 
 const Portfolio = () => {

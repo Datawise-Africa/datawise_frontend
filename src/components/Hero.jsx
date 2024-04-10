@@ -2,9 +2,9 @@ import { useRef } from "react";
 
 import Button from "./Button";
 import Section from "./Section";
-import datawise_hero from "../assets/illustration/5.png";
-import curve from "../assets/hero/curve.png";
-import heroBackground from "../assets/hero/hero-background.jpg";
+import datawise_hero from "/assets/illustration/5.png";
+import curve from "/assets/hero/curve.png";
+import heroBackground from "/assets/hero/hero-background.jpg";
 import { BackgroundCircles, BottomLine, Gradient } from "./designs/Hero";
 import { heroIcons } from "../constants";
 import { ScrollParallax } from "react-just-parallax";
