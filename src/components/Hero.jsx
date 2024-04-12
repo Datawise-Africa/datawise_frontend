@@ -27,9 +27,6 @@ const Hero = () => {
                         We are a research and development company that conducts applied research and development in Artificial Intelligence, Data Science, and the essential infrastructure that connects these fields.
                     </p>
 
-                    <Button href="/contact" white>
-                        Get Started
-                    </Button>
                 </div>
 
                 <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
