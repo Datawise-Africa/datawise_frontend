@@ -21,18 +21,11 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="mt-20 relative lg:ml-auto xl:max-w-[40rem] md:max-w-5xl xl:mb-24">
-            <div className="relative z-1 p-1 rounded-2xl bg-conic-gradient">
-                <div className="relative bg-n-13 rounded-[1rem]">
-                    <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
-
-                    <div className="aspect=[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/500]">
-                        <img src={datawise_about} loading="lazy" alt="hero" className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]" width={1024} height={1800}/>
-
-                    </div>
+          <div className=" relative lg:ml-auto xl:max-w-[40rem] md:max-w-5xl xl:mb-24">
+            <div className="mt-10 relative z-1 p-1">
+                <div className="mt-15 relative rounded-[1rem]">
+                    <img src={datawise_about} loading="lazy" alt="hero" className="w-full border border-n-5 rounded-[1rem]" width={1024} height={1800}/>
                 </div>
-
-                <Gradient />
             </div>
                     
           </div>

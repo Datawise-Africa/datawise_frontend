@@ -115,8 +115,8 @@ export const aboutUs = [
 export const ourServices = [
     {
         id: "0",
-        title: "Data Visualization and Reporting",
-        description: "We assist companies in visualising their data through dashboards, interactive reports, and graphics to make data-driven decisions more effectively",
+        title: "Data Quality",
+        description: "",
         imageUrl: r2,
     },
     {
