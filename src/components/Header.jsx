@@ -48,7 +48,6 @@ const Header = () => {
         <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
           <a href="/" className="w-[12rem] xl:mr-8">
               <img src={datawise} loading="lazy" alt="Datawise" width={65} height={20}/>
-              DATAWISE
           </a>
 
           <nav className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}>
@@ -57,7 +56,7 @@ const Header = () => {
                 <div key={item.id} className="relative">
                   <a
                     href={item.url}
-                    className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden': ""} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.hash ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'} lg:leading-5 lg:hover:text-n-1 xl:px-12`}
+                    className={`block relative font-code text-2xl text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden': ""} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.hash ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'} lg:leading-5 lg:hover:text-n-1 xl:px-12`}
                     onClick={(e) => {
                       e.preventDefault();
                       if (item.hasDropdown) {
@@ -110,9 +109,9 @@ const Header = () => {
             <HamburgerMenu />
           </nav>
 
-          <Button className="hidden lg:flex" href="#signin">
+          {/* <Button className="hidden lg:flex" href="#signin">
               Staff Log in
-          </Button>
+          </Button> */}
 
           <Button className="ml-auto lg:hidden px-3" onClick={toggleNavigation}>
             <MenuSvg openNavigation={openNavigation}/>
