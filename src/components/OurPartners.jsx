@@ -4,7 +4,7 @@ import { ourPartners } from "../constants"
 const OurPartners = () => {
   return (
     <Section crosses>
-        <div className="hidden relative z-1 mt-1 lg:block">
+        <div className="container relative z-2">
             <h5 className="tagline mb-6 text-center text-n-1/50">
                 Our Partners
             </h5>
