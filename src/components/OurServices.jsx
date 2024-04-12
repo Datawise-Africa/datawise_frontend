@@ -25,7 +25,7 @@ const OurServices = () => {
             ))}
           </ul>
 
-          <Button href="/contact">Try it now</Button>
+          {/* <Button href="/contact">Try it now</Button> */}
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
