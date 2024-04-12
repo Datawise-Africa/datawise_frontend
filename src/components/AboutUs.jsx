@@ -1,7 +1,7 @@
 import Section from './Section';
 import Heading from './Heading';
 import datawise_hero from "/assets/illustration/5.png";
-import datawise_about from "/assets/datawise-aboutus.webp";
+import datawise_about from "/assets/datawise_about1.webp";
 import { Gradient } from "./designs/Hero";
 import { aboutUs } from '../constants';
 import { GradientLight } from "./designs/AboutUs";
@@ -21,10 +21,16 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className=" relative lg:ml-auto xl:max-w-[40rem] md:max-w-5xl xl:mb-24">
+          <div className=" relative lg:ml-auto xl:max-w-[30rem] md:max-w-5xl xl:mb-24">
             <div className="mt-10 relative z-1 p-1">
                 <div className="mt-15 relative rounded-[1rem]">
-                    <img src={datawise_about} loading="lazy" alt="hero" className="w-full border border-n-5 rounded-[1rem]" width={1024} height={1800}/>
+                    <img 
+                      src={datawise_about} 
+                      loading="lazy" 
+                      alt="about-us" 
+                      className="w-full border border-n-5 rounded-[1rem]" 
+                      width={1024} 
+                      height={900}/>
                 </div>
             </div>
                     
