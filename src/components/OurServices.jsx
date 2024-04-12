@@ -11,7 +11,7 @@ const OurServices = () => {
     <Section crosses>
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
-          <h2 className="h2 mb-4 md:mb-8">We offer a wide range of services and provide realtime data solutions</h2>
+          <h2 className="h2 mb-4 md:mb-8">We conduct research in several thematic areas and emerging technologies</h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
             {ourServices.slice(0, 3).map((item) => (
