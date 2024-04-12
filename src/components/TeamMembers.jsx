@@ -16,18 +16,18 @@ const TeamMembers = () => {
             >
               <div className="relative">
                 <div className="flex items-center mt-auto">
-                    <img src={item.image} alt={item.name} width={300} height={150} className="rounded-xl m-auto hover:blur:sm transition-all duration-300" loading="lazy"/>
+                    <img src={item.image} alt={item.name} width={300} height={150} className="rounded-xl m-auto" loading="lazy"/>
 
-                    <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-start bg-black bg-opacity-70 text-white text-sm font-bold opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    {/* <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-start bg-black bg-opacity-70 text-white text-sm font-bold opacity-0 hover:opacity-100 transition-opacity duration-300">
                       <p className="z-10">{item.description}</p>
-                    </div>
+                    </div> */}
                 </div>
               </div>
               <div className="info mt-5">
                 <div className="flex justify-center">
                   <ul className="flex gap-4 z-20">
                     <li className="bg-conic-gradient rounded-full"><SocialIcon url={item.linkedin_url} bgColor="#0E0C15" /></li>
-                    <li className="bg-conic-gradient rounded-full"><SocialIcon url={item.twitter_url} bgColor="#0E0C15" /></li>
+                    {/* <li className="bg-conic-gradient rounded-full"><SocialIcon url={item.twitter_url} bgColor="#0E0C15" /></li> */}
                   </ul>
                 </div>
                 <div className="flex flex-col items-center">
