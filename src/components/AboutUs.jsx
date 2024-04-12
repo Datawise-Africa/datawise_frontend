@@ -24,7 +24,7 @@ const AboutUs = () => {
           <div className=" relative lg:ml-auto xl:max-w-[30rem] md:max-w-5xl xl:mb-24">
             <div className="mt-10 relative z-1 p-1">
                 <div className="mt-8 relative rounded-[1rem]">
-                    <img src={datawise_about} loading="lazy" alt="hero" className="w-full border border-n-5 rounded-[1rem]" width={600} height={1800}/>
+                    <img src={datawise_about} loading="lazy" alt="hero" className="w-full rounded-[1rem]" width={600} height={1800}/>
                 </div>
             </div>
                     
