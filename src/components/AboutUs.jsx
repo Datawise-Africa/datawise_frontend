@@ -1,6 +1,7 @@
 import Section from './Section';
 import Heading from './Heading';
 import datawise_hero from "/assets/illustration/5.png";
+import datawise_about from "/assets/datawise-aboutus.webp";
 import { Gradient } from "./designs/Hero";
 import { aboutUs } from '../constants';
 import { GradientLight } from "./designs/AboutUs";
@@ -20,12 +21,20 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <div className="mt-20 relative lg:ml-auto xl:max-w-[40rem]">
-          <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-            <div className="aspect=[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/460] lg:aspect-[1024/]">
-                <img src={datawise_hero} loading="lazy" alt="hero" className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]" width={1024} height={1800}/>
-              </div>
-          </div>
+          <div className="mt-20 relative lg:ml-auto xl:max-w-[40rem] md:max-w-5xl xl:mb-24">
+            <div className="relative z-1 p-1 rounded-2xl bg-conic-gradient">
+                <div className="relative bg-n-13 rounded-[1rem]">
+                    <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
+
+                    <div className="aspect=[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/500]">
+                        <img src={datawise_about} loading="lazy" alt="hero" className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]" width={1024} height={1800}/>
+
+                    </div>
+                </div>
+
+                <Gradient />
+            </div>
+                    
           </div>
         </div>
     </Section>
