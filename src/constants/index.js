@@ -26,12 +26,18 @@ import card_3 from "/assets/icon/card-3.svg"
 export const navigation = [
     {
         id: "0",
-        title: "Portfolio",
-        "url": "#portfolio",
+        title: "Research",
+        "url": "#research",
         dropdownItems: []
     },
     {
         id: "1",
+        title: "Data",
+        "url": "#data",
+        dropdownItems: []
+    },
+    {
+        id: "2",
         title: "Tools",
         "url": "#tools",
         hasDropdown: true,
@@ -49,7 +55,7 @@ export const navigation = [
         ]
     },
     {
-        id: "2",
+        id: "3",
         title: "Company",
         "url": "#company",
         hasDropdown: true,
@@ -73,15 +79,14 @@ export const navigation = [
                 id: "3",
                 title: "Contact",
                 "url": "#contact",
+            },
+            {
+                id: "4",
+                title: "Portfolio",
+                "url": "#portfolio",
             }
         ]
     },
-    {
-        id: "3",
-        title: "Staff Signin",
-        "url": "#signin",
-        onlyMobile: true,
-    }
   ]
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
