@@ -27,13 +27,13 @@ export const navigation = [
     {
         id: "0",
         title: "Research",
-        "url": "#research",
+        "url": "/research",
         dropdownItems: []
     },
     {
         id: "1",
         title: "Data",
-        "url": "#data",
+        "url": "/data",
         dropdownItems: []
     },
     {
@@ -44,13 +44,8 @@ export const navigation = [
         dropdownItems: [
             {
                 id: "0",
-                title: "Datasets",
-                "url": "#datasets",
-            },
-            {
-                id: "1",
                 title: "GPT",
-                "url": "#gpt",
+                "url": "/gpt",
             }
         ]
     },
@@ -62,29 +57,19 @@ export const navigation = [
         dropdownItems: [
             {
                 id: "0",
-                title: "About Us",
-                "url": "#about-us",
+                title: "What We Do",
+                "url": "/what-we-do",
             },
             {
                 id: "1",
-                title: "What We Do",
-                "url": "#what-we-do",
+                title: "Team",
+                "url": "/team",
             },
             {
                 id: "2",
                 title: "Blog",
-                "url": "#blog",
+                "url": "/blog",
             },
-            {
-                id: "3",
-                title: "Contact",
-                "url": "#contact",
-            },
-            {
-                id: "4",
-                title: "Portfolio",
-                "url": "#portfolio",
-            }
         ]
     },
   ]
