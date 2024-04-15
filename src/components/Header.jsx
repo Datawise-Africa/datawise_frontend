@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import datawise from "/assets/datawise-image.jpeg";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../../public/assets/svg/MenuSvg";
 import { HamburgerMenu } from "./designs/Header";
+import Section from "./Section";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
@@ -13,6 +14,7 @@ const Header = () => {
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const toolsRef = useRef(null);
   const companyRef = useRef(null);
+  const navigate = useNavigate();
 
   const pathname = useLocation();
 
@@ -21,7 +23,7 @@ const Header = () => {
     setIsCompanyOpen(false);
   };
 
-  const toggleCompanDropdown = () => {
+  const toggleCompanyDropdown = () => {
     setIsCompanyOpen(!isCompanyOpen);
     setIsToolsOpen(false);
   };
@@ -43,8 +45,22 @@ const Header = () => {
     setOpenNavigation(false);
   }
 
+  const handleNavItemClick = (e, item) => {
+    e.preventDefault();
+    if (item.hasDropdown) {
+      if (item.title === 'Tools') {
+        toggleToolsDropdown();
+      } else if (item.title === 'Company') {
+        toggleCompanyDropdown();
+      }
+    } else {
+      navigate(item.url)
+    }
+  }
+
   return (
-    <div className={`fixed top-0 left-0 lg:left-20 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
+    <Section id="header" className="!px-0 !py-0">
+      <div className={`fixed top-0 left-0 lg:left-20 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
         <div className="flex items-center px-5 lg:px-15 xl:px-20 max-lg:py-4">
           <a href="/" className="w-[12rem] xl:mr-12">
               <img className="lg:ml-20" src={datawise} loading="lazy" alt="Datawise" width={65} height={20}/>
@@ -54,35 +70,26 @@ const Header = () => {
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
               {navigation.map((item) => (
                 <div key={item.id} className="relative">
-                  <a
-                    href={item.url}
-                    className={`block relative font-code text-2xl text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden': ""} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.hash ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'} lg:leading-5 lg:hover:text-n-1 xl:px-8`}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (item.hasDropdown) {
-                        if (item.title === "Tools") {
-                          toggleToolsDropdown();
-                        } else if (item.title === "Company"){
-                          toggleCompanDropdown();
-                        }
-                        
-                      }
-                    }}
+                  <Link
+                    to={item.url}
+                    onClick={(e) => handleNavItemClick(e, item)}
+                    className={`block relative font-code text-2xl text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'} lg:leading-5 lg:hover:text-n-1 xl:px-8`}
                   >
                     {item.title}
                     {item.hasDropdown && ' ⇲'}
-                  </a>
+                  </Link>
                   {
                     item.title === "Tools" && isToolsOpen && (
                       <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
                         {item.dropdownItems.map((dropdownItems) => (
-                          <a
+                          <Link
                             key={dropdownItems.id}
-                            href={dropdownItems.url}
+                            to={dropdownItems.url}
                             className="block px-4 py-3 text-sm text-n-1 hover:text-color-1"
+                            onClick={() => setIsToolsOpen(false)}
                           >
                             {dropdownItems.title}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )
@@ -91,13 +98,14 @@ const Header = () => {
                     item.title === "Company" && isCompanyOpen && (
                       <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
                         {item.dropdownItems.map((dropdownItems) => (
-                          <a
+                          <Link
                             key={dropdownItems.id}
-                            href={dropdownItems.url}
+                            to={dropdownItems.url}
                             className="block px-4 py-3 text-sm text-n-1 hover:text-color-1"
+                            onClick={() => setIsCompanyOpen(false)}
                           >
                             {dropdownItems.title}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )
@@ -117,7 +125,8 @@ const Header = () => {
             <MenuSvg openNavigation={openNavigation}/>
           </Button>
         </div>
-    </div>
+      </div>
+    </Section>
   )
 }
 
