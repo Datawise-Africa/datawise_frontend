@@ -1,13 +1,6 @@
 import Section from './Section';
 import Heading from './Heading';
-import datawise_hero from "/assets/illustration/5.png";
 import datawise_about from "/assets/datawise_about2.png";
-import { Gradient } from "./designs/Hero";
-import { aboutUs } from '../constants';
-import { GradientLight } from "./designs/AboutUs";
-import ClipPath from "../../public/assets/svg/ClipPath";
-
-import Arrow from "../../public/assets/svg/Arrow";
 
 const AboutUs = () => {
   return (
