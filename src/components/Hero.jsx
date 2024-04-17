@@ -25,7 +25,7 @@ const Hero = () => {
                     </h1>
 
                     <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-                        We are a research and development company that conducts applied research and development in Artificial Intelligence, Data Science, and the essential infrastructure that connects these fields.
+                        We conduct applied research in Data and AI while building the critical infrastructure and tools to connect the two for a data wise continent.
                     </p>
 
                 </div>
@@ -35,7 +35,7 @@ const Hero = () => {
                         <div className="relative bg-n-8 rounded-[1rem]">
                             <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
-                            <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/490]">
+                            <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/410]">
                                 <img src={datawise_hero} loading="lazy" alt="hero" className="w-full scale-[1.7] translate-y-[8%] md:scale-[1] md:-translate-y-[10%] lg:-translate-y-[23%]" width={1024} height={1800}/>
 
                                 <ScrollParallax isAbsolutelyPositioned>
