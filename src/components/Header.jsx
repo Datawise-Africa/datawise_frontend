@@ -73,7 +73,7 @@ const Header = () => {
                   <Link
                     to={item.url}
                     onClick={(e) => handleNavItemClick(e, item)}
-                    className={`block relative font-code text-2xl text-n-1 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-1' : 'lg:text-n-1/50'} lg:leading-5 lg:hover:text-n-1 xl:px-8`}
+                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
                   >
                     {item.title}
                     {item.hasDropdown && ' ⇲'}
@@ -85,7 +85,7 @@ const Header = () => {
                           <Link
                             key={dropdownItems.id}
                             to={dropdownItems.url}
-                            className="block px-4 py-3 text-sm text-n-1 hover:text-color-1"
+                            className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
                             onClick={() => setIsToolsOpen(false)}
                           >
                             {dropdownItems.title}
@@ -101,7 +101,7 @@ const Header = () => {
                           <Link
                             key={dropdownItems.id}
                             to={dropdownItems.url}
-                            className="block px-4 py-3 text-sm text-n-1 hover:text-color-1"
+                            className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
                             onClick={() => setIsCompanyOpen(false)}
                           >
                             {dropdownItems.title}

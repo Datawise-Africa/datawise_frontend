@@ -267,6 +267,8 @@ export const PortfolioItems = [
 
 export const portfolioText = "Our portfolio reflects our expertise in delivering data-driven solutions and cutting-edge innovations across various industries."
 
+export const projectText = "Discover our latest projects, showcasing our innovative solutions across industries."
+
 export const teamMembers = [
     {
         id: "0",

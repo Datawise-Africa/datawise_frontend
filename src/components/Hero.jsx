@@ -24,7 +24,7 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
+                    <p className="body-1 max-w-2xl mx-auto mb-6 text-n-2 lg:mb-8 font-normal">
                         We conduct applied research in Data and AI while building the critical infrastructure and tools to connect the two for a data wise continent.
                     </p>
 
@@ -32,7 +32,7 @@ const Hero = () => {
 
                 <div className="relative max-w-[23rem] mx-auto md:max-w-5xl xl:mb-24">
                     <div className="relative z-1 p-0.5 rounded-2xl bg-conic-gradient">
-                        <div className="relative bg-n-8 rounded-[1rem]">
+                        <div className="relative bg-n-15 rounded-[1rem]">
                             <div className="h-[1.4rem] bg-n-10 rounded-t-[0.9rem]" />
 
                             <div className="aspect-[33/40] rounded-b-[0.9rem] overflow-hidden md:aspect-[688/490] lg:aspect-[1024/410]">
@@ -59,7 +59,7 @@ const Hero = () => {
                     <BackgroundCircles />
                 </div>
             </div>
-            <BottomLine />
+            {/* <BottomLine /> */}
         </Section>
     )
 }
