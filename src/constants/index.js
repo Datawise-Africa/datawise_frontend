@@ -102,6 +102,32 @@ export const aboutUs = [
     },
 ]
 
+export const coreServices = [
+    {
+        id: "0",
+        title: "Data",
+        description: "We are creating the largest repository of high quality datasets in relevant domains such as languages, agriculture and healthcare in the continent, ethically.",
+        imageUrl: data_icon,
+        backgroundUrl: r2,
+        light: true,
+    },
+    {
+        id: "1",
+        title: "Artificial Intelligence",
+        description: "We are actively developing AI models such as recommender systems, computer vision models and language models.",
+        imageUrl: ai_icon,
+        backgroundUrl: r1,
+    },
+    {
+        id: "2",
+        title: "Infrastructure",
+        description: "The right infrastructure will be the backbone of a data wise continent. ",
+        imageUrl: infrastructor_icon,
+        backgroundUrl: r3,
+        light: true,
+    },
+]
+
 export const ourServices = [
     {
         id: "0",
@@ -190,15 +216,15 @@ export const ourPartners = [
     },
     {
         id: "2",
-        logo: "/assets/company-logos/lacuna-fund-logo-r.png",
-    },
-    {
-        id: "3",
         logo: "/assets/company-logos/indicator-ventures-logo-r.png",
     },
     {
-        id: "4",
+        id: "3",
         logo: "/assets/company-logos/diversity-logo-r.png",
+    },
+    {
+        id: "4",
+        logo: "/assets/company-logos/lacuna-fund-logo-r.png",
     },
     {
         id: "5",
@@ -217,44 +243,26 @@ export const ourPartners = [
 export const PortfolioItems = [
     {
         id: "0",
-        title: "Retention Metrics",
-        logo: "/assets/portfolio/theshack-logo.png",
+        title: "Data quality in resource constrained environments",
+        logo: "",
         backgroundUrl: "/assets/icon/card-1.svg",
         light: true,
     },
     {
         id: "1",
-        title: "H&M Personalized Fashion Recommendations",
-        logo: "/assets/portfolio/kaggle-logo.png",
+        title: "LLMs for local journalists",
+        logo: "",
         backgroundUrl: "/assets/icon/card-2.svg",
         light: true,
     },
     {
         id: "2",
-        title: "Cloud Visual",
-        logo: "/assets/portfolio/kodak-logo.png",
+        title: "Data collection for Education Domain",
+        logo: "",
         backgroundUrl: "/assets/icon/card-3.svg",
         light: true,
     },
-    {
-        id: "3",
-        title: "MyTichaa Chatbot",
-        logo: "/assets/portfolio/mytichaa-logo.png",
-        backgroundUrl: "/assets/icon/card-1.svg",
-    },
-    {
-        id: "4",
-        title: "Diversity VC",
-        logo: "/assets/portfolio/diversity-logo.jpeg",
-        backgroundUrl: "/assets/icon/card-2.svg",
-        light: true,
-    },
-    {
-        id: "5",
-        title: "AI-ML Curriculum",
-        logo: "/assets/portfolio/eduonix-logo.png",
-        backgroundUrl: "/assets/icon/card-3.svg",
-    },
+
 ]
 
 export const portfolioText = "Our portfolio reflects our expertise in delivering data-driven solutions and cutting-edge innovations across various industries."
