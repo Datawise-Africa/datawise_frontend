@@ -3,7 +3,7 @@ import check from "/assets/check.svg";
 import Button from "./Button";
 import datawise_image from "/assets/datawise-image.jpeg";
 
-import { ourServices, serviceText } from "../constants";
+import { coreServices, ourServices } from "../constants";
 import { LeftCurve, RightCurve } from "./designs/OurServices";
 
 const OurServices = () => {
@@ -14,7 +14,7 @@ const OurServices = () => {
           <h2 className="h2 mb-4 md:mb-8">We conduct research in several thematic areas and emerging technologies</h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
-            {ourServices.slice(0, 3).map((item) => (
+            {coreServices.map((item) => (
               <li className="mb-3 py-3" key={item.id}>
                 <div className="flex items-center border-t border-n-6">
                   <img src={check} width={24} height={24} alt="check" loading="lazy"/>
@@ -29,7 +29,7 @@ const OurServices = () => {
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
-            <p className="body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">{serviceText}</p>
+            <p className="body-2 mb-8 text-n-4 md:mb-16 lg:w-[22rem] lg:mx-auto"></p>
 
             <div className="relative left-1/2 flex w-[22rem] aspect-square border border-n-6 rounded-full -translate-x-1/2 scale:75 md:scale-100">
               <div className="flex w-60 aspect-square m-auto border border-n-6 rounded-full">
