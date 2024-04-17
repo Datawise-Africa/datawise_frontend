@@ -4,23 +4,23 @@ import datawise_about from "/assets/datawise_about2.png";
 
 const AboutUs = () => {
   return (
-    <Section id="aboutus">
-        <div className="container lg:flex">
-          <div className="max-w-[30rem]">
-            <Heading className="md:max-w-md lg:max-w-2xl" title="About us"/>
+    <Section className="lg:-mt-20" id="aboutus">
+        <div className="z-2 container">
+          <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col items-start justify-center">
+              <div className='mb-6 lg:mb-10'>
+                <h2 className='h2'>About us</h2>
+              </div>
 
-            <p className="body-1 max-w-3xl mx-auto mb-6 text-n-2 lg:mb-8">
-              Datawise Africa is a research and development company that conducts applied research and development in Artificial Intelligence, Data Science, and the essential infrastructure that connects these fields. Our mission is simple yet ambitious: to create a data wise Africa through innovation and develop practical solutions for today’s challenges using Data and AI. Through our dedicated applied research, we aim to contribute meaningfully to the advancement of AI and Data Science. Our goal is to improve data processes, system integration, and unleash the full potential of AI and Data Science.
-            </p>
-          </div>
-
-          <div className=" relative lg:ml-auto xl:max-w-[30rem] md:max-w-5xl xl:mb-24">
+              <p className="body-1 max-w-3xl mx-auto mb-4 text-n-2 lg:mb-8">
+                We are a research and development company conducting applied research in Data and AI while building the critical infrastructure and tools to connect the two. Our goal is to leverage Data to develop AI and other tools that are relevant and appropriate for the communities we live in while building research capacity and leadership in the continent. 
+              </p>
+            </div>
             <div className="mt-10 relative z-1 p-1">
                 <div className="mt-8 relative rounded-[1rem]">
-                    <img src={datawise_about} loading="lazy" alt="hero" className="w-full rounded-[1rem]" width={600} height={1800}/>
+                    <img src={datawise_about} loading="lazy" alt="hero" className="rounded-[1rem]" width={400} height={300}/>
                 </div>
             </div>
-                    
           </div>
         </div>
     </Section>
