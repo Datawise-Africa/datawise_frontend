@@ -10,7 +10,7 @@ const OurServices = () => {
   return (
     <Section crosses>
       <div className="container lg:flex">
-        <div className="max-w-[25rem]">
+        <div className="max-w-[45rem]">
           <h2 className="h2 mb-4 md:mb-8">We conduct research in several thematic areas and emerging technologies</h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
