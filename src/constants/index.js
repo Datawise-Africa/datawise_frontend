@@ -317,6 +317,6 @@ export const socials = [
     {
         id: "1",
         name: "Github",
-        url: "https://github.com/datawisepro",
+        url: "https://github.com/Datawise-Africa",
     },
 ]
