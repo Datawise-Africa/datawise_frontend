@@ -73,7 +73,7 @@ const Header = () => {
                   <Link
                     to={item.url}
                     onClick={(e) => handleNavItemClick(e, item)}
-                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
+                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.hash ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
                   >
                     {item.title}
                     {item.hasDropdown && ' ⇲'}
