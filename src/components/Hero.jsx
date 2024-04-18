@@ -15,8 +15,8 @@ const Hero = () => {
 
     return (
         <Section className="pt-[12rem] -mt-[5.25rem]" crosses crossesOffset="lg:translate-y-[5.25rem]" customPaddings id="hero">
-            <div className="container relative" ref={parallaxRef}>
-                <div className="relative z-1 max-w-[62rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem]">
+            <div className="container relative mt-10" ref={parallaxRef}>
+                <div className="relative z-1 max-w-[70rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem] mt-10">
                     <h1 className="h1 mb-6">
                         <span className="inline-block relative">
                             Datawise Africa{" "}
@@ -24,9 +24,9 @@ const Hero = () => {
                         </span>
                     </h1>
 
-                    <p className="body-1 max-w-2xl mx-auto mb-6 text-n-2 lg:mb-8 font-normal">
+                    <h1 className="h3 max-w-7xl mx-auto mb-6 text-n-2 lg:mb-8 font-normal">
                         We conduct applied research in Data and AI while building the critical infrastructure and tools to connect the two for a data wise continent.
-                    </p>
+                    </h1>
 
                 </div>
             </div>
