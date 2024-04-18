@@ -66,7 +66,7 @@ const OurServices = () => {
               </ul>
 
               {/* <LeftCurve /> */}
-              <RightCurve />
+              {/* <RightCurve /> */}
             </div>
         </div>
       </div>
