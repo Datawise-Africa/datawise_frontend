@@ -4,8 +4,8 @@ import datawise_about from "/assets/datawise_about2.png";
 
 const AboutUs = () => {
   return (
-    <Section className="lg:-mt-20" id="aboutus">
-        <div className="z-2 container">
+    <Section className="lg:mt-5" id="aboutus">
+        <div className="z-2 container lg:mt-5">
           <div className="flex flex-col md:flex-row gap-12">
             <div className="flex flex-col items-start justify-center">
               <div className='mb-6 lg:mb-10'>
