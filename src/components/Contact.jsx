@@ -43,7 +43,7 @@ const Contact = () => {
                         <input type="tel" id="phone" name="phone" className="mt-5 w-full px-3 py-3 border border-n-1/10 rounded-xl focus:outline-none focus:border-n-10"/>
                     </div> */}
                     <div className="mb-4">
-                        <label htmlFor="message" className="block text-sm font-medium text-n-1">Tell us about project</label>
+                        <label htmlFor="message" className="block text-sm font-medium text-n-1">Message</label>
                         <textarea id="message" name="message" row="5" className="mt-5 w-full px-3 py-3 border border-n-1/10 rounded-xl focus:outline-none focus:border-n-10"/>
                     </div> 
                     <Button>Send Message</Button>
