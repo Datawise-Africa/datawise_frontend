@@ -6,8 +6,8 @@ const Portfolio = () => {
   return (
     <Section id="portfolio" crosses>
         <div className="container lg:flex">
-            <div className="max-w-[80rem]">
-                <h2 className="h2 mb-4 md:mb-8">Explore our showcase of exceptional projects</h2>
+            <div className="max-w-[80rem] items-center justify-center">
+                <h2 className="h2 mb-4 md:mb-8">Current research projects</h2>
             </div>
         </div>
         <PortfolioSection />
