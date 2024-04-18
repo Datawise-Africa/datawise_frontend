@@ -41,8 +41,10 @@ const Header = () => {
     }
   };
 
-  const handleNavigationClick = () => {
-    setOpenNavigation(false);
+  const handleDropdownNavigationClick = () => {
+    if(openNavigation) {
+      toggleNavigation()
+    }
   }
 
   const handleNavItemClick = (e, item) => {
@@ -53,8 +55,12 @@ const Header = () => {
       } else if (item.title === 'Company') {
         toggleCompanyDropdown();
       }
+      
     } else {
       navigate(item.url)
+      if(openNavigation) {
+        toggleNavigation();
+      }
     }
   }
 
@@ -73,7 +79,7 @@ const Header = () => {
                   <Link
                     to={item.url}
                     onClick={(e) => handleNavItemClick(e, item)}
-                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.hash ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
+                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
                   >
                     {item.title}
                     {item.hasDropdown && ' ⇲'}
@@ -86,7 +92,10 @@ const Header = () => {
                             key={dropdownItems.id}
                             to={dropdownItems.url}
                             className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
-                            onClick={() => setIsToolsOpen(false)}
+                            onClick={() => {
+                              setIsToolsOpen(false);
+                              handleDropdownNavigationClick();
+                            }}
                           >
                             {dropdownItems.title}
                           </Link>
@@ -102,7 +111,10 @@ const Header = () => {
                             key={dropdownItems.id}
                             to={dropdownItems.url}
                             className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
-                            onClick={() => setIsCompanyOpen(false)}
+                            onClick={() => {
+                              setIsCompanyOpen(false);
+                              handleDropdownNavigationClick();
+                            }}
                           >
                             {dropdownItems.title}
                           </Link>
@@ -116,11 +128,6 @@ const Header = () => {
             </div>
             <HamburgerMenu />
           </nav>
-
-          {/* <Button className="hidden lg:flex" href="#signin">
-              Staff Log in
-          </Button> */}
-
           <Button className="ml-auto lg:hidden px-3" onClick={toggleNavigation}>
             <MenuSvg openNavigation={openNavigation}/>
           </Button>
@@ -131,3 +138,7 @@ const Header = () => {
 }
 
 export default Header;
+
+{/* <Button className="hidden lg:flex" href="#signin">
+              Staff Log in
+          </Button> */}
