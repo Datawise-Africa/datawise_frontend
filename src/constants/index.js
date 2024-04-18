@@ -109,6 +109,7 @@ export const coreServices = [
         description: "We are creating the largest repository of high quality datasets in relevant domains such as languages, agriculture and healthcare in the continent, ethically.",
         imageUrl: data_icon,
         backgroundUrl: r2,
+        cardUrl: "/assets/icon/card-1.svg",
         light: true,
     },
     {
@@ -117,6 +118,7 @@ export const coreServices = [
         description: "We are actively developing AI models such as recommender systems, computer vision models and language models.",
         imageUrl: ai_icon,
         backgroundUrl: r1,
+        cardUrl: "/assets/icon/card-2.svg",
     },
     {
         id: "2",
@@ -125,6 +127,7 @@ export const coreServices = [
         imageUrl: infrastructor_icon,
         backgroundUrl: r3,
         light: true,
+        cardUrl: "/assets/icon/card-1.svg",
     },
 ]
 
@@ -244,21 +247,21 @@ export const PortfolioItems = [
     {
         id: "0",
         title: "Data quality in resource constrained environments",
-        logo: "",
+        logo: "/assets/data-quality-logo.webp",
         backgroundUrl: "/assets/icon/card-1.svg",
         light: true,
     },
     {
         id: "1",
-        title: "LLMs for local journalists",
-        logo: "",
+        title: "LLMs for community journalists",
+        logo: "/assets/llms-community-logo.webp",
         backgroundUrl: "/assets/icon/card-2.svg",
         light: true,
     },
     {
         id: "2",
         title: "Data collection for Education Domain",
-        logo: "",
+        logo: "/assets/data-collection-logo.webp",
         backgroundUrl: "/assets/icon/card-3.svg",
         light: true,
     },
@@ -313,12 +316,7 @@ export const socials = [
     },
     {
         id: "1",
-        name: "Twitter",
-        url: "https://www.twitter.com/datawise_africa",
-    },
-    {
-        id: "2",
-        name: "LinkedIn",
+        name: "Github",
         url: "https://github.com/datawisepro",
     },
 ]
