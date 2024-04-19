@@ -115,7 +115,7 @@ export const coreServices = [
     {
         id: "1",
         title: "Artificial Intelligence",
-        description: "We are actively developing AI models such as recommender systems, computer vision models and language models.",
+        description: "We are actively developing AI models such as recommender systems , computer vision models and language models for communities. We focus on smaller and highly specific models to solve different problems within our ecosystem.",
         imageUrl: ai_icon,
         backgroundUrl: r1,
         cardUrl: "/assets/icon/card-2.svg",
@@ -123,7 +123,7 @@ export const coreServices = [
     {
         id: "2",
         title: "Infrastructure",
-        description: "The right infrastructure will be the backbone of a data wise continent. ",
+        description: "The right infrastructure is the backbone of a data wise continent. We conduct research in sustainable and affordable compute infrastructure as well as partnering with hardware vendors to explore prototype systems.",
         imageUrl: infrastructor_icon,
         backgroundUrl: r3,
         light: true,
