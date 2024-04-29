@@ -16,7 +16,7 @@ const Hero = () => {
     return (
         <Section className="pt-[12rem] -mt-[5.25rem]" crosses crossesOffset="lg:translate-y-[5.25rem]" customPaddings id="hero">
             <div className="container relative lg:mt-10" ref={parallaxRef}>
-                <div className="relative z-1 max-w-[62rem] lg:max-w-[70rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem] mt-10">
+                <div className="relative z-1 max-w-[62rem] lg:max-w-[70rem] mx-auto text-center mb-[4rem] md:mb-20 lg:mb-[6rem] -mt-3 lg:mt-10">
                     <h1 className="h1 mb-6">
                         <span className="inline-block relative">
                             Datawise Africa{" "}
