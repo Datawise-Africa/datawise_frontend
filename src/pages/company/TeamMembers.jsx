@@ -1,5 +1,5 @@
-import Section from "../../components/Section";
-import Heading from "../../components/Heading";
+import Section from "../../components/HomePage/Section";
+import Heading from "../../components/HomePage/Heading";
 import { teamMembers } from "../../constants";
 import { SocialIcon } from "react-social-icons";
 
