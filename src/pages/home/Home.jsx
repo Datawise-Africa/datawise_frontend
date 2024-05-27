@@ -1,10 +1,10 @@
 import ButtonGradient from '../../../public/assets/svg/ButtonGradient';
-import AboutUs from '../../components/AboutUs';
-import Contact from '../../components/Contact';
-import Hero from '../../components/Hero';
-import OurPartners from '../../components/OurPartners';
-import OurServices from '../../components/OurServices';
-import Portfolio from '../../components/Portfolio';
+import AboutUs from '../../components//HomePage/AboutUs';
+import Contact from '../../components/HomePage/Contact';
+import Hero from '../../components/HomePage/Hero';
+import OurPartners from '../../components/HomePage/OurPartners';
+import OurServices from '../../components/HomePage/OurServices';
+import Portfolio from '../../components/HomePage/Portfolio';
 
 const Home = () => {
   return (
