@@ -1,5 +1,5 @@
-import Section from "../../components/Section";
-import PortfolioSection from "../../components/PortfolioSection";
+import Section from "../../components/HomePage/Section";
+import PortfolioSection from "../../components/HomePage/PortfolioSection";
 
 const Research = () => {
   return (
