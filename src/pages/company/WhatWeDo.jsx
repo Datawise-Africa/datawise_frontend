@@ -1,5 +1,5 @@
-import Section from "../../components/Section"
-import ServiceDetail from "../../components/ServiceDetail"
+import Section from "../../components/HomePage/Section"
+import ServiceDetail from "../../components/HomePage/ServiceDetail"
 
 const WhatWeDo = () => {
   return (
