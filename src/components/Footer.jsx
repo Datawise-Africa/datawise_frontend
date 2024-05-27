@@ -1,4 +1,4 @@
-import Section from "./Section";
+import Section from "./HomePage/Section";
 import { SocialIcon } from "react-social-icons";
 import { socials } from "../constants";
 
