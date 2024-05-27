@@ -1,22 +1,24 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 import datawise from "/assets/datawise-image.jpeg";
 import { navigation } from "../constants";
-import Button from "./Button";
+import Button from "./HomePage/Button";
 import MenuSvg from "../../public/assets/svg/MenuSvg";
 import { HamburgerMenu } from "./designs/Header";
-import Section from "./Section";
+import Section from "./HomePage/Section";
+import { getUserId } from "../lib/auth/actions";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
-  const toolsRef = useRef(null);
-  const companyRef = useRef(null);
+  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
   const navigate = useNavigate();
 
   const pathname = useLocation();
+
+  const userId = getUserId(); 
 
   const toggleToolsDropdown = () => {
     setIsToolsOpen(!isToolsOpen);
@@ -28,10 +30,10 @@ const Header = () => {
     setIsToolsOpen(false);
   };
 
-  const handleDropdownClick = () => {
-    setIsCompanyOpen(false);
-    setIsToolsOpen(false);
-  }
+  const toggleAdminPanelDropdown = () => {
+    setIsAdminPanelOpen(!isAdminPanelOpen);
+    setIsAdminPanelOpen(false);
+  };
 
   const toggleNavigation = () => {
     if (openNavigation) {
@@ -54,6 +56,8 @@ const Header = () => {
         toggleToolsDropdown();
       } else if (item.title === 'Company') {
         toggleCompanyDropdown();
+      } else if (item.title === 'Admin Panel') {
+        toggleAdminPanelDropdown();
       }
       
     } else {
@@ -74,56 +78,76 @@ const Header = () => {
 
           <nav className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}>
           <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
-              {navigation.map((item) => (
-                <div key={item.id} className="relative">
-                  <Link
-                    to={item.url}
-                    onClick={(e) => handleNavItemClick(e, item)}
-                    className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
-                  >
-                    {item.title}
-                    {item.hasDropdown && ' ⇲'}
-                  </Link>
-                  {
-                    item.title === "Tools" && isToolsOpen && (
+              {navigation.map((item) => {
+                // Check if the item requires user to be logged in
+                if (item.isLoggedIn && !userId) {
+                  return null;
+                }
+                
+                return (
+                  <div key={item.id} className="relative">
+                    <Link
+                      to={item.url}
+                      onClick={(e) => handleNavItemClick(e, item)}
+                      className={`block relative font-code text-2xl text-n-14 transition-colors hover:text-color-1 ${item.onlyMobile ? 'lg:hidden' : ''} px-6 py-6 md:py-8 lg:py-8 lg:-mr-0.25 lg:text-md lg:font-semibold ${item.url === pathname.pathname ? 'z-2 lg:text-n-15' : 'lg:text-n-14'} lg:leading-5 lg:hover:text-n-15 xl:px-8`}
+                    >
+                      {item.title}
+                      {item.hasDropdown && ' ⇲'}
+                    </Link>
+                    {item.hasDropdown && item.title === "Tools" && isToolsOpen && (
                       <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
-                        {item.dropdownItems.map((dropdownItems) => (
+                        {item.dropdownItems.map((dropdownItem) => (
                           <Link
-                            key={dropdownItems.id}
-                            to={dropdownItems.url}
+                            key={dropdownItem.id}
+                            to={dropdownItem.url}
                             className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
                             onClick={() => {
                               setIsToolsOpen(false);
                               handleDropdownNavigationClick();
                             }}
                           >
-                            {dropdownItems.title}
+                            {dropdownItem.title}
                           </Link>
                         ))}
                       </div>
-                    )
-                  }
-                  {
-                    item.title === "Company" && isCompanyOpen && (
+                    )}
+                    {item.hasDropdown && item.title === "Company" && isCompanyOpen && (
                       <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
-                        {item.dropdownItems.map((dropdownItems) => (
+                        {item.dropdownItems.map((dropdownItem) => (
                           <Link
-                            key={dropdownItems.id}
-                            to={dropdownItems.url}
+                            key={dropdownItem.id}
+                            to={dropdownItem.url}
                             className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
                             onClick={() => {
                               setIsCompanyOpen(false);
                               handleDropdownNavigationClick();
                             }}
                           >
-                            {dropdownItems.title}
+                            {dropdownItem.title}
                           </Link>
                         ))}
                       </div>
-                    )
-                  }
-                </div>
-              ))}
+                    )}
+                    {item.hasDropdown && item.title === "Admin Panel" && isAdminPanelOpen && (
+                      <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.id}
+                            to={dropdownItem.url}
+                            className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
+                            onClick={() => {
+                              setIsAdminPanelOpen(false);
+                              handleDropdownNavigationClick();
+                            }}
+                          >
+                            {dropdownItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
             </div>
             <HamburgerMenu />
