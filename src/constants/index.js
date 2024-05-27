@@ -28,18 +28,21 @@ export const navigation = [
         id: "0",
         title: "Research",
         "url": "/research",
+        isLoggedIn: false,
         dropdownItems: []
     },
     {
         id: "1",
         title: "Data",
         "url": "/data",
+        isLoggedIn: false,
         dropdownItems: []
     },
     {
         id: "2",
         title: "Tools",
         "url": "#tools",
+        isLoggedIn: false,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -53,6 +56,7 @@ export const navigation = [
         id: "3",
         title: "Company",
         "url": "#company",
+        isLoggedIn: false,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -72,6 +76,21 @@ export const navigation = [
             },
         ]
     },
+    {
+        id: "4",
+        title: 'Admin Panel',
+        url: '/dashboard',
+        isLoggedIn: true,
+        hasDropdown: false,
+        dropdownItems: []
+    },
+    {
+        id: "5",
+        title: "Logout",
+        "url": "/logout",
+        isLoggedIn: true,
+        dropdownItems: []
+    }
   ]
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
