@@ -1,0 +1,1 @@
+export const subRegex = new RegExp(/[\s_]/gm);

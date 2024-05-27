@@ -1,0 +1,11 @@
+.html-content {
+    color: white;
+}
+
+.html-content span {
+    background-color: transparent !important;
+}
+
+.html-content * {
+    color: white !important;
+}
