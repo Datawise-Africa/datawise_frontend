@@ -1,10 +1,10 @@
 import he from 'he';
 import DOMPurify from 'dompurify';
 import "./htmldecoder.css"
+import { REACT_PUBLIC_API_HOST } from '../constants';
 
 const HtmlDecoder = ({ html }) => {
-  // const hostUrl = "http://localhost:8000"
-  const hostUrl = 'https://backend.datawise.africa'
+  const hostUrl = REACT_PUBLIC_API_HOST
 
   const UpdateImageUrls = (htmlString) => {
     const parser = new DOMParser();
