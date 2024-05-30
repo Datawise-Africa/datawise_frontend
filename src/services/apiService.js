@@ -1,5 +1,4 @@
-// const REACT_PUBLIC_API_HOST = 'http://localhost:8000'
-const REACT_PUBLIC_API_HOST = 'https://backend.datawise.africa'
+import { REACT_PUBLIC_API_HOST } from "../constants";
 
 const apiService = {
     post: async function (url, data) {
