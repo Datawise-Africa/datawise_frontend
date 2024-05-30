@@ -339,3 +339,6 @@ export const socials = [
         url: "https://github.com/Datawise-Africa",
     },
 ]
+
+// export const REACT_PUBLIC_API_HOST = "http://localhost:8000"
+export const REACT_PUBLIC_API_HOST = "https://backend.datawise.africa"
