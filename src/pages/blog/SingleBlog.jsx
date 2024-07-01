@@ -15,7 +15,7 @@ const SingleBlog = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await apiService.get(`/blogs/${slug}`);
+                const response = await apiService.get(`/blogs/all/${slug}/`);
                 setBlog(response);
             } catch (error) {
                 console.log('Failed to fetch blog', error);
@@ -27,11 +27,11 @@ const SingleBlog = () => {
     }, [slug]);
 
     if (isLoading) {
-        <Loader />
+        return <Loader />
     }
 
     if (!blog) {
-        return <div>Blog not found</div>;
+        return <div className='mt-20 lg:mt-5 min-h-[500vh]'>Blog not found</div>;
     }
 
     return (
