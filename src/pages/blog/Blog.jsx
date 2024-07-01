@@ -15,7 +15,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await apiService.get("/blogs/");
+        const response = await apiService.get("/blogs/all/");
         setBlogs(response.data);
       } catch (error) {
         console.log('Failed to fetch blogs', error);
@@ -27,12 +27,8 @@ const Blog = () => {
   }, []);
 
   if (isLoading) {
-    <Loader />
+    return <Loader />
   }
-
-  // const filteredBlogs = selectedCategory 
-  // ? blogs.filter(blog => blog.blog_category.title === selectedCategory)
-  // : blogs
 
   const filteredBlogs = blogs.filter(blog => {
     const matchesCategory = selectedCategory ? blog.blog_category.title == selectedCategory : true;
