@@ -84,13 +84,13 @@ export const navigation = [
         hasDropdown: false,
         dropdownItems: []
     },
-    {
-        id: "5",
-        title: "Logout",
-        "url": "/logout",
-        isLoggedIn: true,
-        dropdownItems: []
-    }
+    // {
+    //     id: "5",
+    //     title: "Logout",
+    //     "url": "/logout",
+    //     isLoggedIn: true,
+    //     dropdownItems: []
+    // }
   ]
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
