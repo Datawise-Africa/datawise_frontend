@@ -70,7 +70,6 @@ const Login = () => {
                                 <Button onClick={submitLogin}>
                                     Sign in
                                 </Button>
-
                             </div>
                         </form>
                     </div>
