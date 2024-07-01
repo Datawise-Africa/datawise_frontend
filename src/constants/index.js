@@ -324,6 +324,17 @@ export const teamMembers = [
         twitter_url: "https://x.com/__Obrian",
         email: "brian@datawise.africa",
         backgroundUrl: "/assets/icon/reactangle-card-1.svg",
+    },
+    {
+        id: "2",
+        name: "Vall de Graff Auma",
+        title: "Data Journalist",
+        image: "/assets/team_members/vallde.jpg",
+        description: "",
+        linkedin_url: "https://www.linkedin.com/in/valldegraff2607",
+        twitter_url: "https://x.com/vallde_2607",
+        email: "vall@datawise.africa",
+        backgroundUrl: "/assets/icon/reactangle-card-1.svg",
     }
 ]
 
