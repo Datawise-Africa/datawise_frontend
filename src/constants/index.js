@@ -295,7 +295,7 @@ export const teamMembers = [
     {
         id: "0",
         name: "Dr. Albert Kahira",
-        title: "Research Scientist",
+        title: "Director",
         image: "/assets/team_members/albert-kahira.jpeg",
         description: "Albert Kahira is a research scientist at Julich Supercomputing Center(JSC) where he works on Reconfigurable Computing and Machine Learning. He holds a PhD in Computer Architectures from Universitat Politècnica de Catalunya (BarcelonaTech). Prior to joining JSC, he was a predoctoral researcher at Barcelona Supercomputiing Center where he developed tools to scale Machine Learning in HPC. Besides research, he serves in several HPC and ML conferences and workshop committees.",
         linkedin_url: "https://www.linkedin.com/in/albertkahira",
