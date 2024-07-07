@@ -5,7 +5,7 @@ const EducationDataCards = ({ data }) => {
 
     return (
         <div className="p-4 lg:mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {data.slice(0, 10).map((item) => (
+        {data.slice(0, 12).map((item) => (
             <div key={item.id} className="border rounded-lg p-4 shadow-md">
             <h3 className="text-xl font-bold">{item.programme_name}</h3>
             <p>Institution: {item.institution_name}</p>
