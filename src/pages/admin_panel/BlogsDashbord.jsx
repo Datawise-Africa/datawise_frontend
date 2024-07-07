@@ -16,7 +16,6 @@ const BlogsDashbord = () => {
     const fetchBlogs = async () => {
       try {
         const draftResponse = await apiService.get("/blogs/drafts/");
-        console.log(draftResponse)
         setDraftBlogs(draftResponse.data);
       } catch (error) {
         console.log('Failed to fetch blogs', error);
