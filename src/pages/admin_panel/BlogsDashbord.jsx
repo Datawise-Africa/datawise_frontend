@@ -79,11 +79,11 @@ const BlogsDashbord = () => {
                   <label htmlFor="message" className="block text-sm font-medium text-n-1">Excerpt</label>
                   <textarea id="message" name="message" row="5" className="mt-5 w-full px-3 py-3 border border-n-1/10 rounded-xl focus:outline-none focus:border-n-10"/>
               </div> 
-              <div className="mb-4">
+              {/* <div className="mb-4">
                   <label htmlFor="message" className="block  text-sm font-medium text-n-1">Body</label>
                   <textarea id="message" name="message" row="5" className="mt-5 w-full px-3 py-3 h-[200px] border border-n-1/10 rounded-xl focus:outline-none focus:border-n-10"/>
-              </div> 
-             {/* <div className="mb-4">
+              </div>  */}
+             <div className="mb-4">
               <p  className='block text-sm font-medium text-n-1 mb-5'>Body</p>
               <CKEditor 
                 editor={ClassicEditor}
@@ -103,7 +103,7 @@ const BlogsDashbord = () => {
                   console.log('Focus.', editor);
                 }}
               />
-             </div> */}
+             </div>
 
               <div className="mb-4">
                   <label htmlFor="name" className="block text-sm font-medium text-n-1">Publish date</label>
