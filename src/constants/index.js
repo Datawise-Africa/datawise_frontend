@@ -326,7 +326,7 @@ export const teamMembers = [
         backgroundUrl: "/assets/icon/reactangle-card-1.svg",
     },
     {
-        id: "2",
+        id: "3",
         name: "Vall de Graff Auma",
         title: "Data Journalist",
         image: "/assets/team_members/vallde.jpg",
@@ -334,6 +334,17 @@ export const teamMembers = [
         linkedin_url: "https://www.linkedin.com/in/valldegraff2607",
         twitter_url: "https://x.com/vallde_2607",
         email: "vall@datawise.africa",
+        backgroundUrl: "/assets/icon/reactangle-card-1.svg",
+    },
+    {
+        id: "4",
+        name: "Dorothy Chepkonga",
+        title: "Data Analyst",
+        image: "/assets/team_members/dorothy.jpg",
+        description: "",
+        linkedin_url: "https://linkedin.com/in/dorothychepkonga",
+        twitter_url: "",
+        email: "dorothy@datawise.africa",
         backgroundUrl: "/assets/icon/reactangle-card-1.svg",
     }
 ]
