@@ -9,6 +9,7 @@ import Login from "../pages/login/Login";
 import Dashboard from "../pages/admin_panel/Dashboard";
 import SingleBlog from "../pages/blog/SingleBlog";
 import SingleDraft from "../pages/admin_panel/SingleDraft";
+import Resources from "../pages/resources/Resources";
 
 
 const baseRoutes = [
@@ -55,6 +56,10 @@ const baseRoutes = [
     {
         path: "/draft/:slug",
         element: <SingleDraft />,
+    },
+    {
+        path: "/resources",
+        element: <Resources />,
     }
 ] 
 
