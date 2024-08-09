@@ -49,6 +49,11 @@ export const navigation = [
                 id: "0",
                 title: "GPT",
                 "url": "/gpt",
+            },
+            {
+                id: "1",
+                title: "Resources",
+                "url": "/resources",
             }
         ]
     },
