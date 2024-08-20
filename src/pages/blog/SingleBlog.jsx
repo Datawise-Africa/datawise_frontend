@@ -37,18 +37,23 @@ const SingleBlog = () => {
     return (
         <Section>
             <div className='mt-20 lg:mt-5 min-h-[50vh]'>
-                <MaxWidthWrapper>
+                <MaxWidthWrapper className="py-2 flex flex-col gap-2 px-3 max-w-6xl">
+                    {blog.display_featured_image && (
+                        <img 
+                            src={blog.featured_image ? blog.featured_image : defaultImage} 
+                            alt="featured_image" 
+                            className='rounded max-h-96 mx-auto' 
+                        />
+                    )}
+                    
                     <div className='text-left'>
                         <h1 className='text-2xl font-bold mx-auto'>{blog?.title}</h1>
                     </div>
-                    <div className="w-full h-64">
-                        <img src={blog.featured_image ? blog.featured_image : defaultImage} alt="featured_image" className='w-full h-full rounded object-cover' />
-                    </div>
                     <div>
                         <div className='flex items-center gap-4 py-2 border-b px-2 my-1'>
-                            <span className='text-primary trunctate text-lg'>
+                            {/* <span className='text-primary trunctate text-lg'>
                                 <strong>Author:</strong> {blog?.author.first_name}{" "}{blog?.author.last_name}
-                            </span>
+                            </span> */}
                             <span className='text-primary text-lg truncate'>
                                 {new Date(blog?.publish_date).toLocaleDateString()}
                             </span>
