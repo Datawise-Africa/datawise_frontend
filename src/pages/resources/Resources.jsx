@@ -39,7 +39,7 @@ const Resources = () => {
         setPageNumber(1);
     }
 
-    const renderPrewview = (resource) => {
+    const renderPreview = (resource) => {
         const fileExtension = resource.file.split('.').pop().toLowerCase();
         console.log(resource.file)
 
@@ -55,7 +55,7 @@ const Resources = () => {
         }
 
         return (
-            <div className="h-40 mb-4 flex items-center justify-center">
+            <div className="h-96 mb-4 flex items-center justify-center">
                 <img src={resource.file} alt={resource.title} className="object-cover rounded-lg h-full w-full"/>
             </div>
         )
@@ -69,11 +69,19 @@ const Resources = () => {
 
     const downloadPdf = async (resource) => {
         try {
-            let url = `/data/download_resources/${resource.id}/download/`
-            let full_url = `${REACT_PUBLIC_API_HOST}${url}`
-            const response = await apiService.get(url, {
-                responseType: 'blob',
-            }); // Fetch the file from the URL
+            // let url = `/data/download_resources/${resource.id}/download/`
+            let url = resource.file
+            // let full_url = `${REACT_PUBLIC_API_HOST}${url}`
+            const response = await apiService.get(url)
+            console.log('resource:', response)
+            // const response = await apiService.get(url, {
+            //     responseType: 'blob',
+            // }); // Fetch the file from the URL
+            // const blob = new Blob([full_url], {type: 'application/pdf'});
+            // const link = document.createElement('a');
+            // link.href = window.URL.createObjectURL(blob);
+            // link.download = `${resource.title}.pdf`;
+            // link.click();
         } catch (error) {
             console.error('Error downloading the file:', error);
         }
@@ -94,7 +102,7 @@ const Resources = () => {
                                 {category.resources.slice(0, 8).map((resource) => (
                                     <div key={resource.id} className="border p-2 rounded-lg">
                                         <div className="rounded-lg">
-                                            {renderPrewview(resource)}
+                                            {renderPreview(resource)}
                                         </div>
     
                                         <div className="">
@@ -102,9 +110,15 @@ const Resources = () => {
                                                 {resource.title}
                                             </h3>
                                         </div>
-                                            <button className="border px-2 w-full text-n-6 rounded bg-white hover:bg-slate-600 hover:text-n-1">
-                                                <a  href={returnFullUrl(resource)}>Download</a>
-                                            </button>
+                                        <button className="border px-2 w-full text-n-6 rounded bg-white hover:bg-slate-600 hover:text-n-1">
+                                            <a  href={returnFullUrl(resource)}>Download</a>
+                                        </button>
+                                        {/* <button
+                                        onClick={() => downloadPdf(resource)}
+                                            className="border px-2 w-full text-n-6 rounded bg-white hover:bg-slate-600 hover:text-n-1"
+                                        >
+                                            Download
+                                        </button> */}
                                             
                                     </div>
                                 ))}
