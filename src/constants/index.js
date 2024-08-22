@@ -52,8 +52,8 @@ export const navigation = [
             },
             {
                 id: "1",
-                title: "Resources",
-                "url": "/resources",
+                title: "Edu Selector",
+                "url": "/edu-selector",
             }
         ]
     },
@@ -83,6 +83,13 @@ export const navigation = [
     },
     {
         id: "4",
+        title: "Resources",
+        "url": "/resources",
+        isLoggedIn: false,
+        dropdownItems: []
+    },
+    {
+        id: "5",
         title: 'Admin Panel',
         url: '/dashboard',
         isLoggedIn: true,
