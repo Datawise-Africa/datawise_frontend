@@ -10,6 +10,7 @@ import Dashboard from "../pages/admin_panel/Dashboard";
 import SingleBlog from "../pages/blog/SingleBlog";
 import SingleDraft from "../pages/admin_panel/SingleDraft";
 import Resources from "../pages/resources/Resources";
+import EduSelector from "../pages/data/EduSelector";
 
 
 const baseRoutes = [
@@ -60,6 +61,10 @@ const baseRoutes = [
     {
         path: "/resources",
         element: <Resources />,
+    },
+    {
+        path: "/edu-selector",
+        element: <EduSelector />,
     }
 ] 
 
