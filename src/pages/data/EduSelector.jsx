@@ -11,7 +11,7 @@ const EduSelector = () => {
 
     const [dropdownOptions, setDropdownOptions] = useState({
         counties: [],
-        qualifications: [],
+        qualification: [],
         // institutionNames: []
     });
 
@@ -24,7 +24,7 @@ const EduSelector = () => {
         "Programme Name",
         "Programme Cost",
         "Programme Category",
-        "Qualification",
+        "Level",
         "County"
     ];
 
@@ -35,12 +35,12 @@ const EduSelector = () => {
                 const data  = await apiService.get('/data/edu_query_tool/');
 
                 const counties = data ? [...new Set(data.map(item => item.county))] : [];
-                const qualifications = data ? [...new Set(data.map(item => item.qualification))] : [];
+                const qualification = data ? [...new Set(data.map(item => item.qualification))] : [];
                 // const institutionNames = data ? [...new Set(data.map(item => item.institution_name))]: [];
                 
                 setDropdownOptions({
                     counties,
-                    qualifications,
+                    qualification,
                     // institutionNames
                 });
             } catch (error) {
@@ -92,14 +92,34 @@ const EduSelector = () => {
     }
 
     return (
-        <Section className="p-6">
-            <div className='max-w-4xl mx-auto'>
-                {dataLoading && <div className="text-center py-4">Data loading...</div>}
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+        <Section className="">
+            <div className="relative h-screen bg-cover bg-center"
+                style={{ backgroundImage: "url('/assets/edu_selector-bg1.png')" }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black opacity-70"></div>
+                
+                <div className="relative z-10 ml-20 mt-20 mb-5 md:mt-0 flex md:justify-center items-center md:flex-row">
+                    <button 
+                        className='first-line:relative mt-10 md:mt-20 lg:mt-10 font-code text-2xl 
+                        transition-colors px-4 py-4 
+                        rounded-full hover:text-n-14 hover:bg-n-8 
+                        bg-n-14 text-n-11'
+                    >
+                        Edu Selector
+                    </button>
+                </div>
+                <div className='relative z-10 max-w-3xl mx-auto text-center mt-4 mb-10 px-4 md:px-0'>
+                    <p className='md:text-lg text-n-1'>
+                    Edu Selector is an easy-to-use tool designed to help you find and compare educational programs and institutions in Kenya. Customize your search by county and/or education level to find the right progam for you.
+                    </p>
+                </div>
+                <div className="relative z-10 max-w-4xl mx-auto">
+                    {dataLoading && <div className="text-center py-4">Data loading...</div>}
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         {[
                             { name: 'county', label: 'County', options: dropdownOptions.counties },
-                            { name: 'qualification', label: 'Qualification', options: dropdownOptions.qualifications },
-                            // { name: 'institutionName', label: 'Institution Name', options: dropdownOptions.institutionNames},
+                            { name: 'qualification', label: 'Level', options: dropdownOptions.qualification },
                         ].map(({ name, label, options }) => (
                             <div key={name} className="flex flex-col">
                                 <label htmlFor={name} className="bold font-semibold mb-2">{label}</label>
@@ -112,67 +132,62 @@ const EduSelector = () => {
                                 >
                                     <option value="">Select {label}</option>
                                     {options.map(option => (
-                                    <option key={option} value={option}>{option}</option>
+                                        <option key={option} value={option}>{option}</option>
                                     ))}
                                 </select>
                             </div>
                         ))}
+                    </div>
                 </div>
-
-            </div>
-            <div className='mt-10 flex justify-center item-center'>
-                <button 
-                    onClick={handleSubmit}
-                    className='text-n-14 bg-blue-950 font-bold border rounded-full py-4 px-4'
-                >
-                    Perform Query
-                </button>
-            </div>
-            {queryLoading && <div className="text-center py-4">Performing query...</div>}
-            {queryResults.length > 0 && (
-                <div className="mt-6 overflow-x-auto" style={{ maxHeight: '60vh' }}>
-                    <div className="relative">
-                        <table className="min-w-full divide-y divide-gray-200">
-                            <thead className="break-words">
-                                <tr className='sticky top-0 z-10 bg-n-14'>
-                                {column_headers.map(column => (
+                
+                <div className='relative z-10 mt-10 flex justify-center item-center'>
+                    <button 
+                        onClick={handleSubmit}
+                        className='text-n-14 bg-blue-950 font-bold border rounded-full py-4 px-8'
+                    >
+                        Search
+                    </button>
+                </div>
+                
+                {queryLoading && <div className="relative z-10 text-center py-4">Performing search...</div>}
+                {queryResults.length > 0 && (
+                    <div className="relative z-10 mt-6 overflow-x-auto" style={{ maxHeight: '60vh' }}>
+                        <div className="relative">
+                            <table className="min-w-full divide-y divide-gray-200">
+                                <thead className="break-words">
+                                    <tr className='sticky top-0 z-10 bg-n-14'>
+                                        {column_headers.map(column => (
                                             <th key={column} className="px-6 py-3 text-left font-bold text-n-11 uppercase">
                                                 {column}
                                             </th>
                                         ))}
-                                </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-200">
-                                {queryResults.map((item, index) => (
-                                    <tr key={index}>
-                                        <td className="px-6 py-4">{item.institution_name}</td>
-                                        <td className="px-6 py-4">{item.programme_name}</td>
-                                        <td className="px-6 py-4">{item.programme_cost.toLocaleString()}</td>
-                                        <td className="px-6 py-4">{item.programme_category}</td>
-                                        <td className="px-6 py-4">{item.qualification}</td>
-                                        <td className="px-6 py-4">{item.county}</td>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className="divide-y divide-gray-200">
+                                    {queryResults.map((item, index) => (
+                                        <tr key={index}>
+                                            <td className="px-6 py-4">{item.institution_name}</td>
+                                            <td className="px-6 py-4">{item.programme_name}</td>
+                                            <td className="px-6 py-4">{item.programme_cost.toLocaleString()}</td>
+                                            <td className="px-6 py-4">{item.programme_category}</td>
+                                            <td className="px-6 py-4">{item.qualification}</td>
+                                            <td className="px-6 py-4">{item.county}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </Section>
     )
+    
 }
 
 export default EduSelector
 
 
 
-
-{/* <div className='flex justify-end'>
-                        <button
-                            onClick={handleSubmit}
-                            className="bg-indigo-700 text-white p-3 rounded-lg hover:bg-indigo-800 transition-colors"
-                        >
-                            Perform Query
-                        </button>
-                    </div> */}
+{/* <div className="absolute inset-0 bg-black opacity-70"></div> */}
 
