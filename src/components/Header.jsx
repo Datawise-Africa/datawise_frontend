@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-import datawise from "/assets/datawise-image.jpeg";
+import datawise from "/assets/logo-round.png";
 import { navigation } from "../constants";
 import Button from "./HomePage/Button";
 import MenuSvg from "../../public/assets/svg/MenuSvg";
@@ -73,7 +73,7 @@ const Header = () => {
       <div className={`fixed top-0 left-0 lg:left-20 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}>
         <div className="flex items-center px-5 lg:px-15 xl:px-20 max-lg:py-4">
           <a href="/" className="w-[12rem] xl:mr-12">
-              <img className="lg:ml-20" src={datawise} loading="lazy" alt="Datawise" width={65} height={20}/>
+              <img className="lg:ml-20" src={datawise} loading="lazy" alt="Datawise" width={80} height={20}/>
           </a>
 
           <nav className={`${openNavigation ? 'flex' : 'hidden'} fixed top-[5rem] left-0 right-0 bottom-0 bg-n-8 lg:static lg:flex lg:mx-auto lg:bg-transparent`}>
