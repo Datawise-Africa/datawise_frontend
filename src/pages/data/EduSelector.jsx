@@ -134,9 +134,9 @@ const EduSelector = () => {
                                     onChange={handleChange}
                                     className="block w-full p-3 border border-n-15 rounded-lg text-n-1 focus:ring-n-6 focus:border-n-6"
                                 >
-                                    <option className='bg-n-10' value="">Select {label}</option>
+                                    <option value="">Select {label}</option>
                                     {options.map(option => (
-                                        <option className='bg-n-8 textn-1 border rounded-lg' key={option} value={option}>{option}</option>
+                                        <option className='bg-n-8 text-n-1 border rounded-lg' key={option} value={option}>{option}</option>
                                     ))}
                                 </select>
                             </div>
@@ -155,7 +155,7 @@ const EduSelector = () => {
                             >
                                 <option value="">Select Course Category</option>
                                 {dropdownOptions.filteredProgrammeCategories.map(option => (
-                                    <option key={option} value={option}>{option}</option>
+                                    <option className='bg-n-8 text-n-1 border rounded-lg' key={option} value={option}>{option}</option>
                                 ))}
                             </select>
                         </div>
