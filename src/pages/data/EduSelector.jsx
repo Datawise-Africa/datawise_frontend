@@ -24,9 +24,9 @@ const EduSelector = () => {
 
     const column_headers = [
         "Institution Name",
-        "Programme Name",
-        "Programme Cost",
-        "Programme Category",
+        "Course Category",
+        "Course Name",
+        "Cost",
         "Level",
         "County"
     ];
@@ -114,7 +114,7 @@ const EduSelector = () => {
 
                 <div className='relative z-10 max-w-3xl mx-auto text-center mt-4 mb-10 px-4 md:px-0'>
                     <p className='md:text-lg text-n-1'>
-                        Edu Selector is an easy-to-use tool designed to help you find and compare educational programs and institutions in Kenya. Customize your search by county and/or education level to find the right program for you.
+                        Edu Selector is an easy-to-use tool designed to help you find and compare educational programs and institutions in Kenya. Customize your search by county, education level and/or course category to find the right program for you.
                     </p>
                 </div>
 
@@ -188,9 +188,9 @@ const EduSelector = () => {
                                     {queryResults.map((item, index) => (
                                         <tr key={index}>
                                             <td className="px-6 py-4">{item.institution_name}</td>
+                                            <td className="px-6 py-4">{item.programme_category}</td>
                                             <td className="px-6 py-4">{item.programme_name}</td>
                                             <td className="px-6 py-4">{item.programme_cost.toLocaleString()}</td>
-                                            <td className="px-6 py-4">{item.programme_category}</td>
                                             <td className="px-6 py-4">{item.qualification}</td>
                                             <td className="px-6 py-4">{item.county}</td>
                                         </tr>
