@@ -1,33 +1,34 @@
-import {useEffect, useState} from 'react'
+import {useEffect, useState, useRef} from 'react'
 import apiService from '../../services/apiService';
-import Section from '../../components/HomePage/Section';
+// import Section from '../../components/HomePage/Section';
 
 const EduSelector = () => {
     const [formData, setFormData] = useState({
         county: '',
         qualification: '',
-        programme_category: '',
-        programme_category_search: ''  // New state for search input
+        programme_category: ''
     });
 
     const [dropdownOptions, setDropdownOptions] = useState({
         counties: [],
         qualification: [],
         programmeCategories: [],
-        filteredProgrammeCategories: [] // State to store filtered programme categories
     });
 
     const [queryResults, setQueryResults] = useState([]);
     const [dataLoading, setDataLoading] = useState(false);
     const [queryLoading, setQueryLoading] = useState(false);
-    const [showProgrammeSearch, setShowProgrammeSearch] = useState(false);
+    const [filteredCategories, setFilteredCategories] = useState([]);
+    const [showDropdown, setShowDropdown] = useState(false);
+    const searchInputRef = useRef(null);
+    const dropdownRef = useRef(null);
 
     const column_headers = [
         "Institution Name",
         "Course Category",
         "Course Name",
         "Cost",
-        "Level",
+        "Education Level",
         "County"
     ];
 
@@ -43,9 +44,9 @@ const EduSelector = () => {
                 setDropdownOptions({
                     counties,
                     qualification,
-                    programmeCategories,
-                    filteredProgrammeCategories: programmeCategories // Initialize with all categories
+                    programmeCategories
                 });
+                setFilteredCategories(programmeCategories); // Initially show all categories
             } catch (error) {
                 console.log('Error fetching edu query tool:', error);
             } finally {
@@ -56,21 +57,18 @@ const EduSelector = () => {
         fetchEduData();
     }, []);
 
-    // Handle changes in search input for programme categories
-    const handleProgrammeCategorySearch = (e) => {
-        const searchValue = e.target.value.toLowerCase();
-        setFormData({ ...formData, programme_category_search: searchValue });
+    useEffect(() => {
+        const handleOutsideClick = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setShowDropdown(false);
+            }
+        };
 
-        // Apply stemming or simple search filter based on the search value
-        const filtered = dropdownOptions.programmeCategories.filter(category =>
-            category.toLowerCase().includes(searchValue) // Simple contains check
-        );
-
-        setDropdownOptions({
-            ...dropdownOptions,
-            filteredProgrammeCategories: filtered
-        });
-    };
+        document.addEventListener('mousedown', handleOutsideClick);
+        return () => {
+            document.removeEventListener('mousedown', handleOutsideClick);
+        };
+    }, []);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -80,8 +78,32 @@ const EduSelector = () => {
         });
     };
 
-    const handleDropdownClick = () => {
-        setShowProgrammeSearch(!showProgrammeSearch); // Toggle the visibility of the search input
+    const handleCategorySearch = (e) => {
+        const searchValue = e.target.value.toLowerCase();
+        setFilteredCategories(
+            dropdownOptions.programmeCategories.filter(category =>
+                category.toLowerCase().includes(searchValue)
+            )
+        );
+    };
+
+    const handleCategorySelect = (category) => {
+        setFormData({
+            ...formData,
+            programme_category: category
+        });
+        setShowDropdown(false); // Close dropdown after selection
+    };
+
+    const toggleDropdown = () => {
+        setShowDropdown(prevShowDropdown => !prevShowDropdown);
+        if (!showDropdown) {
+            // Reset filter and focus on the input when opening the dropdown
+            setFilteredCategories(dropdownOptions.programmeCategories);
+            setTimeout(() => {
+                searchInputRef.current.focus();
+            }, 100);
+        }
     };
 
     const handleSubmit = async () => {
@@ -114,16 +136,16 @@ const EduSelector = () => {
 
                 <div className='relative z-10 max-w-3xl mx-auto text-center mt-4 mb-10 px-4 md:px-0'>
                     <p className='md:text-lg text-n-1'>
-                        Edu Selector is an easy-to-use tool designed to help you find and compare educational programs and institutions in Kenya. Customize your search by county, education level and/or course category to find the right program for you.
+                        Edu Selector is an easy-to-use tool designed to help you find and compare educational programs and institutions in Kenya. Customize your search by county, education level, and/or course category to find the right program for you.
                     </p>
                 </div>
 
-                <div className="relative z-10 max-w-4xl mx-auto">
+                <div className="relative z-10 max-w-4xl mx-2 md:mx-auto">
                     {dataLoading && <div className="text-center py-4">Data loading...</div>}
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6'>
                         {[
                             { name: 'county', label: 'County', options: dropdownOptions.counties },
-                            { name: 'qualification', label: 'Level', options: dropdownOptions.qualification }
+                            { name: 'qualification', label: 'Education Level', options: dropdownOptions.qualification }
                         ].map(({ name, label, options }) => (
                             <div key={name} className="flex flex-col">
                                 <label htmlFor={name} className="bold font-semibold mb-2">{label}</label>
@@ -132,32 +154,48 @@ const EduSelector = () => {
                                     name={name}
                                     value={formData[name]}
                                     onChange={handleChange}
-                                    className="block w-full p-3 border border-n-15 rounded-lg text-n-1 focus:ring-n-6 focus:border-n-6"
+                                    className="block w-full p-3 border border-n-15 rounded-lg text-n-1 focus:ring-n-6 focus:border-n-6 cursor-pointer"
                                 >
                                     <option value="">Select {label}</option>
                                     {options.map(option => (
-                                        <option className='bg-n-8 text-n-1 border rounded-lg' key={option} value={option}>{option}</option>
+                                        <option className='bg-n-8 text-n-1 border rounded-lg cursor-pointer' key={option} value={option}>{option}</option>
                                     ))}
                                 </select>
                             </div>
                         ))}
 
-                        {/* Programme Category with Search */}
-                        <div className="flex flex-col">
-                            <label htmlFor="programme_category_search" className="bold font-semibold">Course Category</label>
-                            
-                            <select
-                                id="programme_category"
-                                name="programme_category"
-                                value={formData.programme_category}
-                                onChange={handleChange}
-                                className="block w-full p-3 border border-n-15 rounded-lg text-n-1 focus:ring-indigo-700 focus:border-indigo-700 mt-2"
+                        {/* Custom Searchable Programme Category Dropdown */}
+                        <div className="flex flex-col relative" ref={dropdownRef}>
+                            <label htmlFor="programme_category" className="bold font-semibold">Course Category</label>
+                            <button
+                                onClick={toggleDropdown}
+                                className="block w-full p-3 bg-gray-500 border border-n-15 rounded-lg
+                                 text-n-1 focus:ring-indigo-700 focus:border-indigo-700 mt-2"
                             >
-                                <option value="">Select Course Category</option>
-                                {dropdownOptions.filteredProgrammeCategories.map(option => (
-                                    <option className='bg-n-8 text-n-1 border rounded-lg' key={option} value={option}>{option}</option>
-                                ))}
-                            </select>
+                                {formData.programme_category || 'Select Course Category'}
+                            </button>
+                            {showDropdown && (
+                                <div className="absolute mt-8 w-full bg-n-8 text-n-1 border border-n-15 rounded-lg shadow-lg">
+                                    <input
+                                        type="text"
+                                        ref={searchInputRef}
+                                        placeholder="Search categories..."
+                                        className="block w-full p-3 border bg-gray-500 border-n-15 rounded-lg text-n-1 focus:outline-none z-2"
+                                        onChange={handleCategorySearch}
+                                    />
+                                    <ul className="max-h-96 overflow-y-auto block z-10">
+                                        {filteredCategories.map((category, index) => (
+                                            <li
+                                                key={index}
+                                                className="px-3 py-2 hover:bg-n-8 cursor-pointer"
+                                                onClick={() => handleCategorySelect(category)}
+                                            >
+                                                {category}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -165,7 +203,7 @@ const EduSelector = () => {
                 <div className='relative z-10 mt-10 flex justify-center item-center'>
                     <button
                         onClick={handleSubmit}
-                        className='text-n-14 bg-blue-950 font-bold border rounded-full py-4 px-8'>
+                        className='text-n-14 bg-blue-950 font-bold border rounded-full py-3 px-6 lg:px-8'>
                         Search
                     </button>
                 </div>
@@ -174,7 +212,7 @@ const EduSelector = () => {
                 {queryResults.length > 0 && (
                     <div className="relative z-10 mt-6 overflow-x-auto" style={{ maxHeight: '60vh' }}>
                         <div className="relative">
-                            <table className="min-w-full divide-y divide-gray-200">
+                            <table className="min-w-full divide-y divide-gray-200 rounded-lg shadow-md">
                                 <thead className="break-words">
                                     <tr className='sticky top-0 z-10 bg-n-14'>
                                         {column_headers.map(column => (
