@@ -59,7 +59,7 @@ const baseRoutes = [
         element: <SingleDraft />,
     },
     {
-        path: "/resources",
+        path: "/publications",
         element: <Resources />,
     },
     {
