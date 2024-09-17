@@ -13,6 +13,7 @@ const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
+  const [isResourceOpen, setIsResourceOpen] = useState(false);
   const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -27,6 +28,11 @@ const Header = () => {
 
   const toggleCompanyDropdown = () => {
     setIsCompanyOpen(!isCompanyOpen);
+    setIsToolsOpen(false);
+  };
+
+  const toggleResourceDropdown = () => {
+    setIsResourceOpen(!isResourceOpen);
     setIsToolsOpen(false);
   };
 
@@ -56,6 +62,8 @@ const Header = () => {
         toggleToolsDropdown();
       } else if (item.title === 'Company') {
         toggleCompanyDropdown();
+      } else if (item.title == 'Resources') {
+        toggleResourceDropdown();
       } else if (item.title === 'Admin Panel') {
         toggleAdminPanelDropdown();
       }
@@ -120,6 +128,23 @@ const Header = () => {
                             className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
                             onClick={() => {
                               setIsCompanyOpen(false);
+                              handleDropdownNavigationClick();
+                            }}
+                          >
+                            {dropdownItem.title}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                    {item.hasDropdown && item.title === "Resources" && isResourceOpen && (
+                      <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.id}
+                            to={dropdownItem.url}
+                            className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
+                            onClick={() => {
+                              setIsResourceOpen(false);
                               handleDropdownNavigationClick();
                             }}
                           >
