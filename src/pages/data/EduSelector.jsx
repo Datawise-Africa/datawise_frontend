@@ -29,7 +29,8 @@ const EduSelector = () => {
         "Course Name",
         "Cost",
         "Education Level",
-        "County"
+        "County",
+        "Institution Type"
     ];
 
     useEffect(() => {
@@ -111,6 +112,7 @@ const EduSelector = () => {
         setQueryLoading(true);
         try {
             const data = await apiService.get(`/data/edu_query_tool/?${queryParams}`);
+            console.log(data)
             setQueryResults(data);
         } catch (error) {
             console.log('Error performing query:', error);
@@ -231,6 +233,7 @@ const EduSelector = () => {
                                             <td className="px-6 py-4">{item.programme_cost.toLocaleString()}</td>
                                             <td className="px-6 py-4">{item.qualification}</td>
                                             <td className="px-6 py-4">{item.county}</td>
+                                            <td className="px-6 py-4">{item.institution_type}</td>
                                         </tr>
                                     ))}
                                 </tbody>
