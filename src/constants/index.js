@@ -73,20 +73,28 @@ export const navigation = [
                 id: "1",
                 title: "Team",
                 "url": "/team",
-            },
-            {
-                id: "2",
-                title: "Blog",
-                "url": "/blog",
-            },
+            }
         ]
     },
     {
         id: "4",
         title: "Resources",
-        "url": "/resources",
+        "url": "#resources",
         isLoggedIn: false,
-        dropdownItems: []
+        hasDropdown: true,
+        dropdownItems: [
+            {
+                id: '0',
+                title: 'Publications',
+                "url": "/publications",
+            },
+            {
+                id: "1",
+                title: "Blog",
+                "url": "/blog",
+            },
+
+        ]
     },
     {
         id: "5",
