@@ -24,16 +24,19 @@ const Header = () => {
   const toggleToolsDropdown = () => {
     setIsToolsOpen(!isToolsOpen);
     setIsCompanyOpen(false);
+    setIsResourceOpen(false);
   };
 
   const toggleCompanyDropdown = () => {
     setIsCompanyOpen(!isCompanyOpen);
     setIsToolsOpen(false);
+    setIsResourceOpen(false);
   };
 
   const toggleResourceDropdown = () => {
     setIsResourceOpen(!isResourceOpen);
     setIsToolsOpen(false);
+    setIsCompanyOpen(false);
   };
 
   const toggleAdminPanelDropdown = () => {
