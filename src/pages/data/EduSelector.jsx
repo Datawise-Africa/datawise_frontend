@@ -30,7 +30,8 @@ const EduSelector = () => {
         "Cost",
         "Education Level",
         "County",
-        "Institution Type"
+        "Institution Type",
+        "Category"
     ];
 
     useEffect(() => {
@@ -234,6 +235,7 @@ const EduSelector = () => {
                                             <td className="px-6 py-4">{item.qualification}</td>
                                             <td className="px-6 py-4">{item.county}</td>
                                             <td className="px-6 py-4">{item.institution_type}</td>
+                                            <td className="px-6 py-4">{item.category}</td>
                                         </tr>
                                     ))}
                                 </tbody>
