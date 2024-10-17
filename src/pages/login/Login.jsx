@@ -1,5 +1,5 @@
-import Button from '../../components/HomePage/Button';
-
+import Button from './LoginButton';
+import ButtonSvg from "../../assets/ButtonSvg";
 import Section from "../../components/HomePage/Section";
 
 import { useState } from 'react';
@@ -67,10 +67,13 @@ const Login = () => {
                             })}
 
                             <div className="flex justify-center">
-                                <Button onClick={submitLogin}>
+                                <Button >
                                     Sign in
                                 </Button>
+                                
                             </div>
+
+                            <p className='flex gap-2 justify-center'>Don't have an account? <a className='text-n-15' href="/signup"> Sign up</a></p>
                         </form>
                     </div>
                 </div>
