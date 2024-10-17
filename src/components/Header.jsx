@@ -8,17 +8,19 @@ import MenuSvg from "../../public/assets/svg/MenuSvg";
 import { HamburgerMenu } from "./designs/Header";
 import Section from "./HomePage/Section";
 import { getUserId } from "../lib/auth/actions";
+import AuthModal from "./Modals/AuthModal";
+import useAuthModal from "../hooks/useAuthModal";
 
 const Header = () => {
   const [openNavigation, setOpenNavigation] = useState(false);
   const [isToolsOpen, setIsToolsOpen] = useState(false);
   const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const [isResourceOpen, setIsResourceOpen] = useState(false);
-  const [isAdminPanelOpen, setIsAdminPanelOpen] = useState(false);
+  const [navUrl, setNavUrl] = useState('');
   const navigate = useNavigate();
+  const authModal = useAuthModal();
 
   const pathname = useLocation();
-
   const userId = getUserId(); 
 
   const toggleToolsDropdown = () => {
@@ -39,11 +41,6 @@ const Header = () => {
     setIsCompanyOpen(false);
   };
 
-  const toggleAdminPanelDropdown = () => {
-    setIsAdminPanelOpen(!isAdminPanelOpen);
-    setIsAdminPanelOpen(false);
-  };
-
   const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
@@ -60,6 +57,13 @@ const Header = () => {
 
   const handleNavItemClick = (e, item) => {
     e.preventDefault();
+
+    if (item.requiresAuth && !userId) {
+      authModal.open();
+      setNavUrl(item.url);
+      return;
+    }
+
     if (item.hasDropdown) {
       if (item.title === 'Tools') {
         toggleToolsDropdown();
@@ -67,9 +71,7 @@ const Header = () => {
         toggleCompanyDropdown();
       } else if (item.title == 'Resources') {
         toggleResourceDropdown();
-      } else if (item.title === 'Admin Panel') {
-        toggleAdminPanelDropdown();
-      }
+      } 
       
     } else {
       navigate(item.url)
@@ -78,6 +80,14 @@ const Header = () => {
       }
     }
   }
+
+  // const handleLoginSuccess = () => {
+  //   setShowLoginModal(false);
+  //   if (redirectAfterLogin) {
+  //     navigate(redirectAfterLogin);
+  //     setRedirectAfterLogin(null);
+  //   }
+  // }
 
   return (
     <Section id="header" className="!px-0 !py-0">
@@ -156,23 +166,6 @@ const Header = () => {
                         ))}
                       </div>
                     )}
-                    {item.hasDropdown && item.title === "Admin Panel" && isAdminPanelOpen && (
-                      <div className="absolute z-10 top-full left-0 mt-1 w-full bg-n-8 border border-n-5 rounded-lg shadow-lg">
-                        {item.dropdownItems.map((dropdownItem) => (
-                          <Link
-                            key={dropdownItem.id}
-                            to={dropdownItem.url}
-                            className="block px-4 py-3 text-sm text-n-14 hover:text-n-15"
-                            onClick={() => {
-                              setIsAdminPanelOpen(false);
-                              handleDropdownNavigationClick();
-                            }}
-                          >
-                            {dropdownItem.title}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
                   </div>
                 );
               })}
@@ -185,6 +178,7 @@ const Header = () => {
           </Button>
         </div>
       </div>
+      <AuthModal navUrl={navUrl}/>
     </Section>
   )
 }
