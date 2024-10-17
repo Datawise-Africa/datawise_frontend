@@ -29,6 +29,7 @@ export const navigation = [
         title: "Research",
         "url": "/research",
         isLoggedIn: false,
+        requiresAuth: false,
         dropdownItems: []
     },
     {
@@ -36,6 +37,7 @@ export const navigation = [
         title: "Data",
         "url": "/data",
         isLoggedIn: false,
+        requiresAuth: true,
         dropdownItems: []
     },
     {
@@ -43,6 +45,7 @@ export const navigation = [
         title: "Tools",
         "url": "#tools",
         isLoggedIn: false,
+        requiresAuth: false,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -62,6 +65,7 @@ export const navigation = [
         title: "Company",
         "url": "#company",
         isLoggedIn: false,
+        requiresAuth: false,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -81,6 +85,7 @@ export const navigation = [
         title: "Resources",
         "url": "#resources",
         isLoggedIn: false,
+        requiresAuth: false,
         hasDropdown: true,
         dropdownItems: [
             {
@@ -96,21 +101,6 @@ export const navigation = [
 
         ]
     },
-    {
-        id: "5",
-        title: 'Admin Panel',
-        url: '/dashboard',
-        isLoggedIn: true,
-        hasDropdown: false,
-        dropdownItems: []
-    },
-    // {
-    //     id: "5",
-    //     title: "Logout",
-    //     "url": "/logout",
-    //     isLoggedIn: true,
-    //     dropdownItems: []
-    // }
   ]
 
 export const heroIcons = [homeSmile, file02, searchMd, plusSquare];
@@ -384,3 +374,21 @@ export const socials = [
 
 // export const REACT_PUBLIC_API_HOST = "http://localhost:8000"
 export const REACT_PUBLIC_API_HOST = "https://backend.datawise.africa"
+
+// {
+    //     id: "5",
+    //     title: "Logout",
+    //     "url": "/logout",
+    //     isLoggedIn: true,
+    //     dropdownItems: []
+    // }
+
+
+    // {
+    //     id: "5",
+    //     title: 'Admin Panel',
+    //     url: '/dashboard',
+    //     isLoggedIn: true,
+    //     hasDropdown: false,
+    //     dropdownItems: []
+    // },p
