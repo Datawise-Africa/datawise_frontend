@@ -25,10 +25,10 @@ const EduSelector = () => {
 
     const column_headers = [
         "Institution Name",
-        "Course Category",
+        "Category",
         "Course Name",
         "Cost",
-        "Education Level",
+        "Level",
         "County",
         "Institution Type",
         "Category"
