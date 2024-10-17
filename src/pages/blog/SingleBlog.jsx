@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import apiService from '../../services/apiService'
-import Loader from './Loader'
+import SinglePageLoader from './SinglePageLoader'
 import HtmlDecoder from "../../helpers/HtmlDecoder";
 import MaxWidthWrapper from '../../helpers/max-width-wrapper';
 import Section from '../../components/HomePage/Section';
@@ -27,7 +27,7 @@ const SingleBlog = () => {
     }, [slug]);
 
     if (isLoading) {
-        return <Loader />
+        return <SinglePageLoader />
     }
 
     if (!blog) {
