@@ -31,7 +31,10 @@ const EduSelector = () => {
         "Level",
         "County",
         "Institution Type",
-        "Category"
+        "Category",
+        "Website",
+        "Contact",
+        "Email"
     ];
 
     useEffect(() => {
@@ -148,7 +151,7 @@ const EduSelector = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6'>
                         {[
                             { name: 'county', label: 'County', options: dropdownOptions.counties },
-                            { name: 'qualification', label: 'Education Level', options: dropdownOptions.qualification }
+                            { name: 'qualification', label: 'Level', options: dropdownOptions.qualification }
                         ].map(({ name, label, options }) => (
                             <div key={name} className="flex flex-col">
                                 <label htmlFor={name} className="bold font-semibold mb-2">{label}</label>
@@ -169,7 +172,7 @@ const EduSelector = () => {
 
                         {/* Custom Searchable Programme Category Dropdown */}
                         <div className="flex flex-col relative" ref={dropdownRef}>
-                            <label htmlFor="programme_category" className="bold font-semibold">Course Category</label>
+                            <label htmlFor="programme_category" className="bold font-semibold">Course Name</label>
                             <button
                                 onClick={toggleDropdown}
                                 className="block w-full p-3 bg-gray-500 border border-n-15 rounded-lg
@@ -236,6 +239,9 @@ const EduSelector = () => {
                                             <td className="px-6 py-4">{item.county}</td>
                                             <td className="px-6 py-4">{item.institution_type}</td>
                                             <td className="px-6 py-4">{item.category}</td>
+                                            <td className="px-6 py-4"><a href={item.website} target="_blank" rel="noopener noreferrer" className='hover:underline'>{item.website}</a></td>
+                                            <td className="px-6 py-4">{item.contact}</td>
+                                            <td className="px-6 py-4">{item.email_address}</td>
                                         </tr>
                                     ))}
                                 </tbody>
