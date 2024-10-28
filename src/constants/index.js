@@ -26,6 +26,14 @@ import card_3 from "/assets/icon/card-3.svg"
 export const navigation = [
     {
         id: "0",
+        title: "Home",
+        "url": "/",
+        isLoggedIn: false,
+        requiresAuth: false,
+        dropdownItems: []
+    },
+    {
+        id: "1",
         title: "Research",
         "url": "/research",
         isLoggedIn: false,
@@ -33,15 +41,15 @@ export const navigation = [
         dropdownItems: []
     },
     {
-        id: "1",
+        id: "2",
         title: "Data",
         "url": "/data",
         isLoggedIn: false,
-        requiresAuth: true,
+        requiresAuth: false,
         dropdownItems: []
     },
     {
-        id: "2",
+        id: "3",
         title: "Tools",
         "url": "#tools",
         isLoggedIn: false,
@@ -61,7 +69,7 @@ export const navigation = [
         ]
     },
     {
-        id: "3",
+        id: "4",
         title: "Company",
         "url": "#company",
         isLoggedIn: false,
@@ -81,7 +89,7 @@ export const navigation = [
         ]
     },
     {
-        id: "4",
+        id: "5",
         title: "Resources",
         "url": "#resources",
         isLoggedIn: false,
