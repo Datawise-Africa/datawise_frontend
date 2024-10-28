@@ -1,6 +1,6 @@
+import { REACT_PUBLIC_API_HOST } from "../../constants";
 
-
-const NEXT_PUBLIC_API_HOST = 'http://localhost:8000'
+// const NEXT_PUBLIC_API_HOST = 'http://localhost:8000'
 
 class Cookie {
     /**
@@ -78,7 +78,7 @@ export async function handleRefresh() {
 
     const refreshToken =  getRefreshToken();
 
-    const token = await fetch(`${NEXT_PUBLIC_API_HOST}/auth/refresh_token/`, {
+    const token = await fetch(`${REACT_PUBLIC_API_HOST}/auth/refresh_token/`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
