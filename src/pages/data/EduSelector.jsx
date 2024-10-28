@@ -6,7 +6,7 @@ const EduSelector = () => {
     const [formData, setFormData] = useState({
         county: '',
         qualification: '',
-        programme_category: ''
+        broad_category: ''
     });
 
     const [dropdownOptions, setDropdownOptions] = useState({
@@ -25,13 +25,13 @@ const EduSelector = () => {
 
     const column_headers = [
         "Institution Name",
+        "Institution Type",
         "Category",
         "Course Name",
         "Cost",
         "Level",
         "County",
-        "Institution Type",
-        "Category",
+        // "Category",
         "Website",
         "Contact",
         "Email"
@@ -44,14 +44,14 @@ const EduSelector = () => {
                 const data = await apiService.get('/data/edu_query_tool/');
                 const counties = data ? [...new Set(data.map(item => item.county))] : [];
                 const qualification = data ? [...new Set(data.map(item => item.qualification))] : [];
-                const programmeCategories = data ? [...new Set(data.map(item => item.programme_category))] : [];
+                const broadCategories = data ? [...new Set(data.map(item => item.broad_category))] : [];
 
                 setDropdownOptions({
                     counties,
                     qualification,
-                    programmeCategories
+                    broadCategories
                 });
-                setFilteredCategories(programmeCategories); // Initially show all categories
+                setFilteredCategories(broadCategories); // Initially show all categories
             } catch (error) {
                 console.log('Error fetching edu query tool:', error);
             } finally {
@@ -86,7 +86,7 @@ const EduSelector = () => {
     const handleCategorySearch = (e) => {
         const searchValue = e.target.value.toLowerCase();
         setFilteredCategories(
-            dropdownOptions.programmeCategories.filter(category =>
+            dropdownOptions.broadCategories.filter(category =>
                 category.toLowerCase().includes(searchValue)
             )
         );
@@ -95,7 +95,7 @@ const EduSelector = () => {
     const handleCategorySelect = (category) => {
         setFormData({
             ...formData,
-            programme_category: category
+            broad_category: category
         });
         setShowDropdown(false); // Close dropdown after selection
     };
@@ -104,7 +104,7 @@ const EduSelector = () => {
         setShowDropdown(prevShowDropdown => !prevShowDropdown);
         if (!showDropdown) {
             // Reset filter and focus on the input when opening the dropdown
-            setFilteredCategories(dropdownOptions.programmeCategories);
+            setFilteredCategories(dropdownOptions.broadCategories);
             setTimeout(() => {
                 searchInputRef.current.focus();
             }, 100);
@@ -178,7 +178,7 @@ const EduSelector = () => {
                                 className="block w-full p-3 bg-gray-500 border border-n-15 rounded-lg
                                  text-n-1 focus:ring-indigo-700 focus:border-indigo-700 mt-2"
                             >
-                                {formData.programme_category || 'Select Course Category'}
+                                {formData.broad_category || 'Select Course Category'}
                             </button>
                             {showDropdown && (
                                 <div className="absolute mt-8 w-full bg-n-8 text-n-1 border border-n-15 rounded-lg shadow-lg">
@@ -232,16 +232,18 @@ const EduSelector = () => {
                                     {queryResults.map((item, index) => (
                                         <tr key={index}>
                                             <td className="px-6 py-4">{item.institution_name}</td>
-                                            <td className="px-6 py-4">{item.programme_category}</td>
+                                            <td className="px-6 py-4">{item.institution_type}</td>
+                                            <td className="px-6 py-4">{item.category}</td>
+                                            {/* <td className="px-6 py-4">{item.programme_category}</td> */}
                                             <td className="px-6 py-4">{item.programme_name}</td>
                                             <td className="px-6 py-4">{item.programme_cost.toLocaleString()}</td>
                                             <td className="px-6 py-4">{item.qualification}</td>
                                             <td className="px-6 py-4">{item.county}</td>
-                                            <td className="px-6 py-4">{item.institution_type}</td>
-                                            <td className="px-6 py-4">{item.category}</td>
-                                            <td className="px-6 py-4"><a href={item.website} target="_blank" rel="noopener noreferrer" className='hover:underline'>{item.website}</a></td>
+                                            <td className="px-6 py-4">
+                                                <a href={item.website} target="_blank" rel="noopener noreferrer" className='hover:underline'>{item.website}</a>
+                                            </td>
                                             <td className="px-6 py-4">{item.contact}</td>
-                                            <td className="px-6 py-4">{item.email_address}</td>
+                                            <td className="px-6 py-4">{item.email_address}</td> 
                                         </tr>
                                     ))}
                                 </tbody>
