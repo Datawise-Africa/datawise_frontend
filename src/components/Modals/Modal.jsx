@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import datalab from "/assets/datalab-logo.svg";
 
 import React from 'react'
 
@@ -26,9 +27,14 @@ const Modal = ({label, content, isOpen, close}) => {
             <div className="relative w-[90%] md:w-[80%] lg:w-[700px] my-6 mx-auto h-auto">
             <div className={`translate duration-600 h-full ${showModal ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-10'}`}>
                 <div className="w-full h-auto rounded-xl relative flex flex-col bg-n-8">
-                    <header className="h-[60px] flex items-center p-6 rounded-t justify-center relative">
-                        <h2 className="text-lg font-bold">{label}</h2>
-                        <div onClick={handleClose} className="p-3 absolute right-3 hover:bg-n-2 rounded-full cursor-pointer">
+                    <header className="h-[60px] flex p-6 rounded-t justify-between relative">
+                    <div className="flex items-center space-x-1">
+                            <img src={datalab} alt="Datalab Logo" className="w-6 h-8" />
+                            <h2 className="h4 text-n-14">
+                            Datalab
+                            </h2>
+                        </div>
+                        <div onClick={handleClose} className="absolute right-3 hover:bg-n-2 rounded-full cursor-pointer">
                             <svg fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
