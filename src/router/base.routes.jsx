@@ -13,6 +13,7 @@ import SingleBlog from "../pages/blog/SingleBlog";
 import SingleDraft from "../pages/admin_panel/SingleDraft";
 import Resources from "../pages/resources/Resources";
 import EduSelector from "../pages/data/EduSelector";
+import DataCatalog from "../pages/data/DataCatalog";
 
 
 const baseRoutes = [
@@ -27,6 +28,10 @@ const baseRoutes = [
     {
         path: "/data",
         element: <Data />,
+    },
+    {
+        path: "/data/lab",
+        element: <DataCatalog />,
     },
     {
         path: "/data/:id",
