@@ -323,17 +323,6 @@ export const teamMembers = [
     },
     {
         id: "1",
-        name: "Paul Njoroge",
-        title: "Project Manager",
-        image: "/assets/team_members/paul-njoroge.jpeg",
-        description: "Paul, a projects manager at Datawise Africa and an analyst at Indicator Ventures, holds a BSc in Electrical Engineering from Erciyes University(Turkey). Formerly with Etohum & Startup Istanbul, he led SSA, linking startups from Eurasia & Africa to Silicon Valley investors. He specializes in Applied ML/Natural Language Processing for real-world problem-solving. Additionally, he conducted data analysis for Diversity VC's UK-based diversity report.",
-        linkedin_url: "https://www.linkedin.com/in/paulnjoroge",
-        twitter_url: "https://x.com/paulxnjoroge",
-        email: "paul@datawise.africa",
-        backgroundUrl: "/assets/icon/reactangle-card-1.svg",
-    },
-    {
-        id: "2",
         name: "Brian Odhiambo",
         title: "Data Scientist",
         image: "/assets/team_members/brian-odhiambo.jpg",
@@ -341,6 +330,17 @@ export const teamMembers = [
         linkedin_url: "https://www.linkedin.com/in/brian-odhiambo-6b036b181",
         twitter_url: "https://x.com/__Obrian",
         email: "brian@datawise.africa",
+        backgroundUrl: "/assets/icon/reactangle-card-1.svg",
+    },
+    {
+        id: "2",
+        name: "Dorothy Chepkonga",
+        title: "Data Analyst",
+        image: "/assets/team_members/dorothy.jpg",
+        description: "",
+        linkedin_url: "https://linkedin.com/in/dorothychepkonga",
+        twitter_url: "",
+        email: "dorothy@datawise.africa",
         backgroundUrl: "/assets/icon/reactangle-card-1.svg",
     },
     {
@@ -354,17 +354,7 @@ export const teamMembers = [
         email: "vall@datawise.africa",
         backgroundUrl: "/assets/icon/reactangle-card-1.svg",
     },
-    {
-        id: "4",
-        name: "Dorothy Chepkonga",
-        title: "Data Analyst",
-        image: "/assets/team_members/dorothy.jpg",
-        description: "",
-        linkedin_url: "https://linkedin.com/in/dorothychepkonga",
-        twitter_url: "",
-        email: "dorothy@datawise.africa",
-        backgroundUrl: "/assets/icon/reactangle-card-1.svg",
-    }
+    
 ]
 
 export const socials = [
