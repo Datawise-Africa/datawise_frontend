@@ -110,13 +110,27 @@ export async function handleRefresh() {
     });
     return token;
 }
-export async function handleLogin(id, user_role, access_token, refresh_token) {
+export async function handleLogin(id, first_name, last_name, user_role, access_token, refresh_token) {
 
     Cookie.set('session_userid', id, {
         httpOnly: true,
         secure: process.env.NODE_ENV !== 'production',
         maxAge: 60 * 60 * 24 * 7, // One week
         path: '/'
+    });
+
+    Cookie.set('session_first_name', first_name, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== 'production',
+      maxAge: 60 * 60 * 24 * 7, // One week
+      path: '/'
+    });
+
+    Cookie.set('session_last_name', last_name, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== 'production',
+      maxAge: 60 * 60 * 24 * 7, // One week
+      path: '/'
     });
 
     Cookie.set('session_userrole', user_role, {
@@ -152,6 +166,15 @@ export function getUserId() {
     const userId = Cookie.get('session_userid');
     // console.log({userId});
     return userId ? userId : null;
+}
+
+export function getUserNames() {
+  const firstName = Cookie.get('session_first_name') || null;
+  const lastName = Cookie.get('session_last_name') || null;
+
+  const fullName = firstName
+
+  return fullName;
 }
 
 export function getUserRole() {
