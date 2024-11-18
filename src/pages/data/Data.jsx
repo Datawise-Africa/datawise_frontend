@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Section from "../../components/HomePage/Section";
 
-import AuthModal from "../../components/Modals/AuthModal";
+import AuthModal from "../../components/Modals/AuthModals/AuthModal";
 import useAuthModal from "../../hooks/useAuthModal";
 import { getUserId } from "../../lib/auth/actions";
 import { getUserNames } from "../../lib/auth/actions";
@@ -22,14 +22,14 @@ const Data = () => {
   const userNames = getUserNames();
 
   const handleBrowseDataClick = () => {
-    navigate("/data/lab");
+    navigate("/datalab/catalog");
   }
 
   const handleAuthModalToggle = () => {
     if (!userId) {
         authModal.open();
         setNavUrl(pathname.pathname)
-        return;
+        return; 
     }
   }
  
