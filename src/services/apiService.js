@@ -3,7 +3,7 @@ import { getAccessToken } from "../lib/auth/actions"
 
 const apiService = {
     post: async function (url, data) {
-        console.log('post', url, data);
+        // console.log('post', url, data);
     
         return new Promise((resolve, reject) => {
             let full_url = `${REACT_PUBLIC_API_HOST}${url}`
@@ -26,7 +26,7 @@ const apiService = {
     },
 
     get: async function (url) {
-        console.log('get', url);
+        // console.log('get', url);
 
         return new Promise((resolve, reject) => {
             let full_url = `${REACT_PUBLIC_API_HOST}${url}`
@@ -48,9 +48,9 @@ const apiService = {
     },
 
     getProtected: async function (url) {
-        console.log('get', url);
+        // console.log('get', url);
         const accessToken = getAccessToken();
-        console.log('get', accessToken);
+        // console.log('get', accessToken);
 
         return new Promise((resolve, reject) => {
             let full_url = `${REACT_PUBLIC_API_HOST}${url}`
