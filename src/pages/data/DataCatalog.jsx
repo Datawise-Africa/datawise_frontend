@@ -10,8 +10,12 @@ import FilterPanel from "./FilterPanel";
 import DatasetGrid from "./DatasetGrid";
 import Loader from "../blog/Loader";
 import apiService from "../../services/apiService";
-import AuthModal from "../../components/Modals/AuthModal";
+import AuthModal from "../../components/Modals/AuthModals/AuthModal";
+import SingleDataModal from "./SingleDataModal";
+import useDataModal from "../../hooks/useDataModal";
 import useAuthModal from "../../hooks/useAuthModal";
+import useDownloadDataModal from "../../hooks/useDownloadDataModal";
+import DownloadDataModal from "./DownloadDataModal";
 import { getUserId } from "../../lib/auth/actions";
 import { getUserNames } from "../../lib/auth/actions";
 
@@ -20,8 +24,12 @@ const DataCatalog = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [navUrl, setNavUrl] = useState("");
     const [sortIsOpen, setSortIsOpen] = useState(false);
+    const [selectedDataset, setSelectedDataset] = useState(null);
+    const [downloadDataset, setDownloadDataset] = useState(null);
 
     const authModal = useAuthModal();
+    const dataModal = useDataModal();
+    const downloadDataModal = useDownloadDataModal();
     const pathname = useLocation();
     const userId = getUserId();
     const userNames = getUserNames();
@@ -52,6 +60,22 @@ const DataCatalog = () => {
         }
     }
 
+    const handleSingleDataModal = (dataset) => {
+        setSelectedDataset(dataset);
+        dataModal.open();
+    }
+
+    const handleDownloadDataClick = (dataset) => {
+        if (!userId) {
+            authModal.open();
+            setNavUrl(pathname.pathname)
+            return;
+        } else {
+            setDownloadDataset(dataset);
+            downloadDataModal.open();
+        }
+    }
+
     const handleSearch = (searchText) => {
         console.log("Searching for:", searchText);
     }
@@ -77,10 +101,16 @@ const DataCatalog = () => {
                     <div className="hidden lg:block">
                         <FilterPanel />
                     </div>
-                    <DatasetGrid datasets={datasets} />
+                    <DatasetGrid datasets={datasets} handleSingleDataModal={handleSingleDataModal} handleDownloadDataClick={handleDownloadDataClick} />
                 </div>
             </div>
             <AuthModal navUrl={navUrl} />
+            {selectedDataset && (
+                <SingleDataModal dataset={selectedDataset} isOpen={dataModal.isOpen} close={dataModal.close} handleDownloadDataClick={handleDownloadDataClick} />
+            )}
+            {selectedDataset && (
+                <DownloadDataModal dataset={downloadDataset} isOpen={downloadDataModal.isOpen} close={downloadDataModal.close} />
+            )}
         </Section>
     )
 }
