@@ -10,7 +10,7 @@ import MenuSvg from "../../../public/assets/svg/MenuSvg";
 import { HamburgerMenu } from "../designs/Header";
 import Section from "../HomePage/Section";
 import { getUserId } from "../../lib/auth/actions";
-import AuthModal from "../Modals/AuthModal";
+import AuthModal from "../Modals/AuthModals/AuthModal";
 import useAuthModal from "../../hooks/useAuthModal";
 
 const Header = () => {
