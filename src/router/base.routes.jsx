@@ -1,7 +1,7 @@
 import Home from "../pages/home/Home";
 import Research from "../pages/research/Research";
 import Data from "../pages/data/Data";
-import SingleData from "../pages/data/SingleData";
+// import SingleData from "../pages/data/SingleData";
 import GPT from "../pages/gpt/GPT";
 import TeamMembers from "../pages/company/TeamMembers";
 import WhatWeDo from "../pages/company/WhatWeDo";
@@ -26,17 +26,17 @@ const baseRoutes = [
         element: <Research />,
     },
     {
-        path: "/data",
+        path: "/datalab",
         element: <Data />,
     },
     {
-        path: "/data/lab",
+        path: "/datalab/catalog",
         element: <DataCatalog />,
     },
-    {
-        path: "/data/:id",
-        element: <SingleData />,
-    },
+    // {
+    //     path: "/data/:id",
+    //     element: <SingleData />,
+    // },
     {
         path: "/gpt",
         element: <GPT />,
