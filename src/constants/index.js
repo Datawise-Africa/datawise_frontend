@@ -43,7 +43,7 @@ export const navigation = [
     {
         id: "2",
         title: "Data",
-        "url": "/data",
+        "url": "/datalab",
         isLoggedIn: false,
         requiresAuth: false,
         dropdownItems: []
