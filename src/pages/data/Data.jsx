@@ -39,7 +39,7 @@ const Data = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="md:mt-10"> {/* Should be on the left  */}
             <h1 className="h1 mt-5 text-n-14">
-              Power Your Insights with Trusted Data
+              We’re Building a platform that maintains transparency in data use while ensuring creator sovereignty
             </h1>
 
             <p className="p mt-3">
