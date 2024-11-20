@@ -85,6 +85,11 @@ export const navigation = [
                 id: "1",
                 title: "Team",
                 "url": "/team",
+            },
+            {
+                id: "2",
+                title: "Join Us",
+                "url": "/join-us",
             }
         ]
     },
