@@ -14,6 +14,7 @@ import SingleDraft from "../pages/admin_panel/SingleDraft";
 import Resources from "../pages/resources/Resources";
 import EduSelector from "../pages/data/EduSelector";
 import DataCatalog from "../pages/data/DataCatalog";
+import JoinUs from "../pages/company/JoinUs";
 
 
 const baseRoutes = [
@@ -33,10 +34,6 @@ const baseRoutes = [
         path: "/datalab/catalog",
         element: <DataCatalog />,
     },
-    // {
-    //     path: "/data/:id",
-    //     element: <SingleData />,
-    // },
     {
         path: "/gpt",
         element: <GPT />,
@@ -48,6 +45,10 @@ const baseRoutes = [
     {
         path: "/team",
         element: <TeamMembers />,
+    },
+    {
+        path: "/join-us",
+        element: <JoinUs />
     },
     {
         path: "/blog",
