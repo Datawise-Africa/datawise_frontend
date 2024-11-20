@@ -43,7 +43,7 @@ const Data = () => {
             </h1>
 
             <p className="p mt-3">
-            We’re Building a platform that maintains transparency in data use while ensuring creator sovereignty. We offer a comprehensive catalog of high-quality datasets that empower you to:
+            We are Building a platform that maintains transparency in data use while ensuring creator sovereignty. We offer a comprehensive catalog of high-quality datasets that empower you to:
             <span className="">
               <ul className="mt-5 mb-10 md:mb-14">
                   <li className="mb-3 py-3">
