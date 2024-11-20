@@ -87,7 +87,7 @@ const DatasetCard = ({ dataset, handleSingleDataModal, handleDownloadDataClick }
                     <img src={view_icon} alt="" className="w-6 h-6"/>
                     View Details
                 </button>
-                 <button className="border py-2 px-3 rounded-xl bg-n-14 hover:bg-n-2 text-n-8 flex space-x-1"> {/*Remember to return on click func */}
+                <button className="border py-2 px-3 rounded-xl bg-n-14 hover:bg-n-2 text-n-8 flex space-x-1">
                     <img src={download_arrow_icon} alt="" className="w-6 h-6"/>
                     Download
                 </button>
