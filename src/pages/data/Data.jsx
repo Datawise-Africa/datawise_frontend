@@ -39,11 +39,11 @@ const Data = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           <div className="md:mt-10"> {/* Should be on the left  */}
             <h1 className="h1 mt-5 text-n-14">
-              We’re Building a platform that maintains transparency in data use while ensuring creator sovereignty
+              Power Your Insights with Trusted Data
             </h1>
 
             <p className="p mt-3">
-            Unlock the Power of Data At DataLab, we offer a comprehensive catalog of high-quality datasets that empower you to:
+            We’re Building a platform that maintains transparency in data use while ensuring creator sovereignty. We offer a comprehensive catalog of high-quality datasets that empower you to:
             <span className="">
               <ul className="mt-5 mb-10 md:mb-14">
                   <li className="mb-3 py-3">
