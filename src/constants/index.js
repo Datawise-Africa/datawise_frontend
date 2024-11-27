@@ -429,7 +429,7 @@ export const available_positions = [
     {
         id: "0",
         title: "Frontend Developer Intern",
-        overview: "We are seeking a motivated, self-driven and talented frontend developer intern to join our team. This internship offers a unique opportunity to gain hands-on experience in developing dynamic and responsive web applications using React. The intern will collaborate closely with our development team, contributing to real projects.",
+        overview: "We are seeking a motivated, self-driven and talented frontend developer intern to join our team. This internship offers a unique opportunity to gain hands-on experience in developing dynamic and responsive web applications using React. The intern will collaborate closely with our development team, contributing to real projects. The intern will be engaged for a period of 4 months starting January 2025.",
         responsibilities: frontend_developer_responsibilitie,
         skills: frontend_developer_skills,
         period: "4 months",
@@ -439,7 +439,7 @@ export const available_positions = [
     {
         id: "1",
         title: "Communication and Business Development Intern",
-        overview: "In this role, we are looking for a results-driven professional with a background in Journalism, Corporate Communications, Public Relations and other relevant fields in communication. The intern brings a unique blend of creativity and analytical thinking while working in a dynamic team of professionals.",
+        overview: "In this role, we are looking for a results-driven professional with a background in Journalism, Corporate Communications, Public Relations and other relevant fields in communication. The intern brings a unique blend of creativity and analytical thinking while working in a dynamic team of professionals. The intern will be engaged for a period of 4 months starting January 2025.",
         responsibilities: communication_responsibilities,
         skills: communication_skills,
         period: "4 months",
