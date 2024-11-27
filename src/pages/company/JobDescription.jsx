@@ -23,7 +23,7 @@ const JobDescription = () => {
         
         {/* About the program */}
         <div className="text-center mb-8">
-          <h5 className="h5 mt-4 mb-4">About the program</h5>
+          <h5 className="h5 mt-4 mb-4">About the role</h5>
           <p className="text-n-14leading-relaxed">{position?.overview}</p>
         </div>
         
