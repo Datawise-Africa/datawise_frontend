@@ -375,6 +375,79 @@ export const socials = [
     },
 ]
 
+export const frontend_developer_responsibilitie = [
+    "Develop user interfaces and components using React and modern frontend technologies.",
+    "Collaborate with backend developers to integrate APIs and ensure seamless data flow between the frontend and backend.",
+    "Debug and resolve fronted issues to ensure optimal performance and user experience.",
+    "Participate in code reviews, providing and receiving constructive feedback.",
+    "Maintain and contribute to the project’s codebase on Github, following best practices for version control and collaboration.",
+    "Assist in the development of responsive designs that work across various devices and browsers.",
+    "Contribute to the design and implementation of new features and functionalities based on the project requirements."
+]
+
+export const frontend_developer_skills = [
+    "Proficiency in HTML, CSS, JavaScript (ES6+).", 
+    "Familiarity with React.js and its core principles.",
+    "Basic understanding of state management libraries (e.g., Redux or Context API).",
+    "Ability to style and design (use of tailwind or related css frameworks).",
+    "Debugging and testing (Use of browser developer tools, testing frameworks and error handling)",
+    "Experience working with RESTful APIs and integrating them into frontend applications.",
+    "Understanding of responsive design principles and cross-browser compatibility.",
+    "Strong problem solving skills and attention to detail.",
+    "Ability to work independently and as part of a collaborative team."
+]
+
+export const communication_responsibilities = [
+    "Create content across our social media channels. Writing and optimizing content for the website,including well-structured blogs and posting consistently to increase engagement and brand awareness.",
+    "Ensure consistency in terms of voice, branding, messaging and frequency of posting via digital channels.",
+    "Analyze engagement metrics and proposing strategies for improvement.",
+    "Conduct market research to identify potential clients and business opportunities.",
+    "Assist in developing and implementing business development strategies.",
+    "Ensure that all marketing and communications material align with the brand’s standards.",
+    "Develop and execute communication strategies and campaigns.",
+    "Streamline internal communication by collaborating with team members on projects."
+]
+
+export const communication_skills = [
+    "Excellent written and verbal communication skills, with the ability to present complex information in a clear and concise manner.", 
+    "Basic knowledge of digital marketing tools (Social media platforms, Canva).",
+    "Social Media Management: Creating and managing content across our platforms.",
+    "Problem solving: Addressing communication challenges with creative solutions.",
+    "Presentation skills: Proficiency in tools such as Microsoft PowerPoint and Google slides.",
+    "Strong analytical and research skills with a keen eye for detail.",
+]
+
+export const what_you_get = [
+    "Working in a fast paced environment.",
+    "Collaborating with like minded individuals.",
+    "Opportunity to build and refine your skills.",
+    "Access to resources and tools for learning.",
+    "Monthly stipend plus career progression."
+]
+
+export const available_positions = [
+    {
+        id: "0",
+        title: "Frontend Developer Intern",
+        overview: "We are seeking a motivated, self-driven and talented frontend developer intern to join our team. This internship offers a unique opportunity to gain hands-on experience in developing dynamic and responsive web applications using React. The intern will collaborate closely with our development team, contributing to real projects.",
+        responsibilities: frontend_developer_responsibilitie,
+        skills: frontend_developer_skills,
+        period: "4 months",
+        position: "Intern",
+        what_you_get: what_you_get,
+    },
+    {
+        id: "1",
+        title: "Communication and Business Development Intern",
+        overview: "In this role, we are looking for a results-driven professional with a background in Journalism, Corporate Communications, Public Relations and other relevant fields in communication. The intern brings a unique blend of creativity and analytical thinking while working in a dynamic team of professionals.",
+        responsibilities: communication_responsibilities,
+        skills: communication_skills,
+        period: "4 months",
+        position: "Intern",
+        what_you_get: what_you_get,
+    }
+]
+
 // export const REACT_PUBLIC_API_HOST = "http://localhost:8000"
 export const REACT_PUBLIC_API_HOST = "https://backend.datawise.africa"
 
