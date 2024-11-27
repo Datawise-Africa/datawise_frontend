@@ -15,7 +15,7 @@ import Resources from "../pages/resources/Resources";
 import EduSelector from "../pages/data/EduSelector";
 import DataCatalog from "../pages/data/DataCatalog";
 import JoinUs from "../pages/company/JoinUs";
-
+import JobDescription from "../pages/company/JobDescription";
 
 const baseRoutes = [
     {
@@ -49,6 +49,10 @@ const baseRoutes = [
     {
         path: "/join-us",
         element: <JoinUs />
+    },
+    {
+        path: "/job-description",
+        element: <JobDescription />,
     },
     {
         path: "/blog",
