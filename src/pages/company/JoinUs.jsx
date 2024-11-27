@@ -1,105 +1,143 @@
+import { useRef, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import  { PositionContext } from '../../storage/PositionProvider';
 import Section from "../../components/HomePage/Section";
-import list_circle_icon from "/assets/datalab/list-circle.svg";
+import career_hero from "/assets/career/career_hero.svg";
+import rectangle_pointer from "/assets/career/rectangle.svg";
 
+import { available_positions } from "../../constants";
 const JoinUs = () => {
-    const developer_skills = ["Proficiency in HTML, CSS, JS and React.", 
-        "Knowledgeable with building tools and ecosystem e.g., npm, pnpm etc.",
-        "Ability to style and design (use of tailwind or related css frameworks)",
-        "Debugging and testing (Use of browser developer tools, testing frameworks and error handling)",
-        "API integration (Understands how to consume APIs)",
-        "Performance optimization (familiarity with code optimization, and profiling tools)",
-        "Occupies soft skills (e.g., problem solving, team collaboration and adaptability)."
-    ]
+    const navigate = useNavigate();
+    const openPositionRef = useRef(null);
+    const { state, dispatch } = useContext(PositionContext);
 
-    const communication_skills = ["Excellent written and verbal communication skills, with the ability to present complex information in a clear and concise manner.", 
-        "Social Media Management: Creating and managing content across our platforms.",
-        "Problem solving: Addressing communication challenges with creative solutions.",
-        "Presentation skills: Proficiency in tools such as Microsoft PowerPoint and Google slides",
-        "Strong analytical and research skills with a keen eye for detail.",
-        "Constant collaboration with team members.",
-        "Interpersonal skills."
-    ]
+    const scrollToOpenPositions = () => {
+        openPositionRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
 
-    const what_you_get = [
-        "Working in a fast paced environment.",
-        "Collaborating with like minded individuals.",
-        "Opportunity to build and refine your skills.",
-        "Access to resources and tools for learning.",
-        "Monthly stipend plus career progression."
-    ]
-
+    const handleViewDetails = (position) => {
+        dispatch({ type: 'SET_POSITION', payload: position })
+        navigate('/job-description');
+    }
+    
   return (
-    <Section className="mt-10 items-center justify-center">
-        <div className="container flex flex-col mt-10 mb-10">
-            <div className="max-w-[80rem]">
-                <h2 className="h3 mb-4 md:mb-8">
-                    Role: Internship (Open Application)
-                </h2>
-            </div>
-            <div className="max-w-[80rem]">
-                <h5 className="h5 mb-2 md:mb-4">
-                    Who we are:
-                </h5>
-            </div>
-            <div className="max-w-[80rem]">
-                <p>
-                At Datawise Africa, we are on a mission to bridge the data gap in Africa. We create and provide high-quality, labeled datasets which then can be used to draw valuable insights. Since our foundation in 2023, we have focused on providing businesses, researchers, and institutions across the African region with the correct data and AI solutions that unlock innovation and growth.
-                </p>
-            </div>
-            <div className="max-w-[80rem]">
-                <h5 className="h5 mt-4 mb-2 md:mb-4">
-                    About the internship program
-                </h5>
-                <p>
-                This program is tailored to provide recent graduates and young professionals a platform to showcase their skills and to gain mentorship from like minded professionals. The intern will be engaged for a period of 4 months. 
-                </p>
-            </div>
-            <div className="max-w-[80rem]">
-                <h5 className="h5 mt-4 mb-2 md:mb-4">
-                    Applicants can work in either of the following areas:
-                </h5>
-                <p className="font-bold">Frontend Development</p>
-                <p className="pt-2 pb-2">Skills:</p>
-                <ul>
-                    {developer_skills.map((skill, index) => (
-                        <li key={index} className="flex gap-1">
-                            <img src={list_circle_icon} alt="list-circle" className="w-3 h-4 pt-2" />
-                            <p>{skill}</p>
-                        </li>
-                    ))}
-                </ul>
+    <Section className="mt-15 md:1">
+        <section className="items-center justify-center flex flex-col py-5 mb-10 bg-gray-600 w-full">
+            <div className="">
+                <div className="text-center max-w-[30rem]">
+                    <h2 className="h3 mb-4 md:mb-8">
+                        Shape Africa's Future Through Data
+                    </h2>
+                    <p>
+                        Join a passionate team leveraging data to drive impactful decisions in health, education, and governance
+                    </p>
+                    <button
+                        onClick={scrollToOpenPositions} 
+                        className="bg-n-15 text-n-14 rounded-full px-2 py-2 mt-2"
+                    >
+                        View Available Positions
+                    </button>
+                </div>
+                <img src={career_hero} alt=""  className="w-full max-w-md pt-4"/>
 
-                <p className="pt-4 font-bold">Communications</p>
-                <p className="pt-2 pb-2">Skills:</p>
-                <ul>
-                    {communication_skills.map((skill, index) => (
-                        <li key={index} className="flex gap-1">
-                            <img src={list_circle_icon} alt="list-circle" className="w-3 h-4 pt-2" />
-                            <p>{skill}</p>
+            </div>
+        </section>
+        <section className="px-8 md:px-20">
+            <div className="flex flex-col items-center justify-center py-5 mb-10">
+                <h4 className="h4 mb-4 md:mb-8">
+                    Why work with us?
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div className="flex flex-col items-center text-center">
+                        <img src={rectangle_pointer} alt="" className="w-10 h-10 mb-2 mx-auto"/>
+                        <p className="font-bold xl">
+                            Impactful Work
+                        </p>
+                        <p>
+                            Contribute to projects that tackle real-world challenges
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                        <img src={rectangle_pointer} alt="" className="w-10 h-10 mb-2 mx-auto"/>
+                        <p className="font-bold xl">
+                            Innovative Culture
+                        </p>
+                        <p>
+                            Collaborate with experts in data science, technology, and policy
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                        <img src={rectangle_pointer} alt="" className="w-10 h-10 mb-2 mx-auto"/>
+                        <p className="font-bold xl">
+                            Career Development
+                        </p>
+                        <p>
+                            Expand your skills through learning and mentorship
+                        </p>
+                    </div>
+                    <div className="flex flex-col items-center text-center">
+                        <img src={rectangle_pointer} alt="" className="w-10 h-10 mb-2 mx-auto"/>
+                        <p className="font-bold xl">
+                            Diversity & Inclusion
+                        </p>
+                        <p>
+                            Thrive in a workplace where every voice matters
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section ref={openPositionRef} className="px-8 md:px-20 items-center justify-center flex flex-col py-5 mb-10 bg-gray-600 w-full">
+            <div>
+                <h4 className="h4 mb-4 md:mb-8">Open Positions</h4>
+            </div>
+            <div className='md:col-span-3 lg:col-span-3 lg:mt-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                    {available_positions.map((position, index) => (
+                        <div key={index} className='border border-n-8 bg-n-8 p-6 rounded-xl shadow-md'>
+                            <div className="space-y-2 md:flex justify-between ">
+                                <h3 className='font-semibold text-xl'>{position.title}</h3>
+                                <button 
+                                    className="hover:cursor-pointer hover:bg-n-9 hover:border-n-9 hover:rounded-lg hover:px-2 hover:py-2"
+                                    onClick={() => handleViewDetails(position)}
+                                >
+                                    View Details
+                                </button>
+                            </div>
+                            <p className="pt-5"> 
+                                {position.overview}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+        <section className="px-8 md:px-20 items-center justify-center flex flex-col py-5 mb-10">
+            <div className="max-w-[40rem]">
+                <h4 className="text-center h4 mb-4 md:mb-5">
+                    Steps to Join Us
+                </h4>
+                <ul className="space-y-6">
+                    {['Apply Online', 'Interviews', 'Onboarding'].map((step, index) => (
+                        <li key={index} className="flex items-start gap-4">
+                            <div className="flex-shrink-0 w-10 h-10 bg-n-14 text-n-8 rounded-full flex items-center justify-center text-lg font-semibold">
+                                {index + 1}
+                            </div>
+                            <div>
+                                <p className="font-bold">{step}</p>
+                                <p className="font-thin">
+                                    {index === 0 && "Submit your resume and cover letter for the desired role."}
+                                    {index === 1 && "Showcase your expertise through discussions with our team."}
+                                    {index === 2 && "Start your journey with a comprehensive onboarding program."}
+                                </p>
+                            </div>
                         </li>
                     ))}
                 </ul>
             </div>
-            <div className="max-w-[80rem]">
-                <h5 className="h5 mt-4 mb-2 md:mb-4">
-                    What you will get
-                </h5>
-                <ul>
-                    {what_you_get.map((skill, index) => (
-                        <li key={index} className="flex gap-1">
-                            <img src={list_circle_icon} alt="list-circle" className="w-3 h-4 pt-2" />
-                            <p>{skill}</p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-            <div className="mt-6 flex justify-between">
-                <button onClick={() => window.open("https://airtable.com/appyJCBfT7JCdYREt/pag9kw9lRkNZwv8G8/form")} 
-                className="w-full border py-3 px-12 rounded-full bg-n-14 hover:bg-n-2 text-n-8 items-center justify-center flex space-x-1">
-                    Apply for Position
-                </button>
-            </div>
-        </div>
+        </section>
     </Section>
   )
 }
