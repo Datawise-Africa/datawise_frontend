@@ -23,7 +23,7 @@ const JoinUs = () => {
     }
     
   return (
-    <Section className="mt-15 md:1">
+    <Section className="mt-15 md:mt-1">
         <section className="items-center justify-center flex flex-col py-5 mb-10 bg-gray-600 w-full">
             <div className="">
                 <div className="text-center max-w-[30rem]">
