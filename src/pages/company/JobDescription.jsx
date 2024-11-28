@@ -13,6 +13,7 @@ const JobDescription = () => {
   return (
     <Section className="mt-10">
       <div className="container mx-auto px-6 lg:px-16 flex flex-col mt-10 mb-10 items-center justify-center max-w-screen-lg">
+        <h3 className="h3 mb-4 md:mb-8">Role: {position?.title}</h3>
         {/* Who we are */}
         <div className="text-center mb-8">
           <h5 className="h5 mb-4">Who we are:</h5>
