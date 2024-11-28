@@ -25,7 +25,7 @@ const JoinUs = () => {
 
   return (
     <Section className="mt-15 lg:mt-1">
-      <section className="flex flex-col items-center justify-center py-5 mb-10 bg-gray-700 w-full">
+      <section className="flex flex-col items-center justify-center py-5 mb-1 w-full">
         <div className="text-center max-w-[30rem]">
           <h2 className="h3 mb-4 md:mb-8">
             Shape Africa's Future Through Data
@@ -90,7 +90,7 @@ const JoinUs = () => {
       </section>
       <section
         ref={openPositionRef}
-        className="px-8 md:px-20 items-center justify-center flex flex-col py-5 mb-10 bg-gray-700 w-full"
+        className="px-8 md:px-20 items-center justify-center flex flex-col py-5 mb-10 w-full"
       >
         <div>
           <h4 className="h4 mb-4 md:mb-8">Open Positions</h4>
@@ -100,7 +100,7 @@ const JoinUs = () => {
             {available_positions.map((position, index) => (
               <div
                 key={index}
-                className="border border-n-8 bg-n-8 p-6 rounded-xl shadow-md"
+                className="border border-n-3  bg-n-8 p-6 rounded-xl shadow-md"
               >
                 <div className="space-y-2 lg:flex justify-between mb-2 lg:mb-0">
                   <h3 className="font-semibold text-xl">{position.title}</h3>
