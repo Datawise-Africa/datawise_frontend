@@ -17,7 +17,7 @@ const JobDescription = () => {
         {/* Who we are */}
         <div className="text-center mb-8">
           <h5 className="h5 mb-4">Who we are:</h5>
-          <p className="text-n-14 leading-relaxed">
+          <p className="text-justify text-n-14 leading-relaxed">
             At Datawise Africa, we are on a mission to bridge the data gap in Africa. We create and provide high-quality, labeled datasets which can be used to draw valuable insights. Since our foundation in 2023, we have focused on providing businesses, researchers, and institutions across the African region with the correct data and AI solutions that unlock innovation and growth.
           </p>
         </div>
@@ -25,7 +25,7 @@ const JobDescription = () => {
         {/* About the program */}
         <div className="text-center mb-8">
           <h5 className="h5 mt-4 mb-4">About the role</h5>
-          <p className="text-n-14leading-relaxed">{position?.overview}</p>
+          <p className="text-justify text-n-14 leading-relaxed">{position?.overview}</p>
         </div>
         
         {/* Responsibilities */}
