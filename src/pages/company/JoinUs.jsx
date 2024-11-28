@@ -55,15 +55,15 @@ const JoinUs = () => {
       <section className="px-8 md:px-20">
         <div className="flex flex-col items-center justify-center py-5 mb-10">
           <h4 className="h4 mb-4 md:mb-8">Why work with us?</h4>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center text-center">
               <img
                 src={rectangle_pointer}
                 alt=""
                 className="w-8 h-8 md:w-12 md:h-12 mb-2 mx-auto"
               />
-              <p className="font-bold xl">Impactful Work</p>
-              <p>Contribute to projects that tackle real-world challenges</p>
+              <p className="font-bold xl">Impact-Driven Projects</p>
+              <p>We focus on transformative data solutions tailored for Africa, allowing you  to contribute meaningfully to the continent's growth and innovation</p>
             </div>
             <div className="flex flex-col items-center text-center">
               <img
@@ -71,9 +71,9 @@ const JoinUs = () => {
                 alt=""
                 className="w-8 h-8 md:w-12 md:h-12 mb-2 mx-auto"
               />
-              <p className="font-bold xl">Innovative Culture</p>
+              <p className="font-bold xl">Commitment to Innovation</p>
               <p>
-                Collaborate with experts in data science, technology, and policy
+              We value creativity and innovation, providing you with a platform to tackle complex challenges and lead groundbreaking initiatives
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
@@ -82,17 +82,8 @@ const JoinUs = () => {
                 alt=""
                 className="w-8 h-8 md:w-12 md:h-12 mb-2 mx-auto"
               />
-              <p className="font-bold xl">Career Development</p>
-              <p>Expand your skills through learning and mentorship</p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <img
-                src={rectangle_pointer}
-                alt=""
-                className="w-8 h-8 md:w-12 md:h-12 mb-2 mx-auto"
-              />
-              <p className="font-bold xl">Diversity & Inclusion</p>
-              <p>Thrive in a workplace where every voice matters</p>
+              <p className="font-bold xl">Collaborative Growth</p>
+              <p>We  foster a collaborative environment, offering opportunities to work with a network of experts across diverse fields and impactful projects</p>
             </div>
           </div>
         </div>
@@ -113,7 +104,21 @@ const JoinUs = () => {
               >
                 <div className="space-y-2 lg:flex justify-between mb-2 lg:mb-0">
                   <h3 className="font-semibold text-xl">{position.title}</h3>
-                  <div className="flex gap-2">
+                  
+                </div>
+                <div className="pt-2 flex flex-wrap gap-2">
+                  <p className="bg-gray-800 text-n-14 rounded-lg px-3 py-1 text-xs">
+                    {position.work_period}
+                  </p>
+                  <p className="bg-gray-800 text-n-14 rounded-lg px-3 py-1 text-xs">
+                    {position.position}
+                  </p>
+                  <p className="bg-gray-800 text-n-14 rounded-lg px-3 py-1 text-xs">
+                    {position.workmode}
+                  </p>
+                </div>
+                <p className="pt-5">{position.overview}</p>
+                <div className="pt-5 flex gap-2">
                     <button
                       className="underline"
                       onClick={() => handleViewDetails(position)}
@@ -128,16 +133,6 @@ const JoinUs = () => {
                       loading="lazy"
                     />
                   </div>
-                </div>
-                <div className="pt-2 flex flex-wrap gap-2">
-                  <p className="bg-gray-800 text-n-14 rounded-lg px-3 py-1 text-xs">
-                    {position.workmode}
-                  </p>
-                  <p className="bg-gray-800 text-n-14 rounded-lg px-3 py-1 text-xs">
-                    {position.position}
-                  </p>
-                </div>
-                <p className="pt-5">{position.overview}</p>
               </div>
             ))}
           </div>
