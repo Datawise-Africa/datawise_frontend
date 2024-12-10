@@ -437,17 +437,17 @@ export const available_positions = [
     //     position: "Internship",
     //     what_you_get: what_you_get,
     // },
-    {
-        id: "0",
-        title: "Communication and Business Development Intern",
-        overview: "In this role, we are looking for a results-driven young professional (recent graduate) with a background in Journalism, Corporate Communications, Public Relations and other relevant fields in communication. The intern brings a unique blend of creativity and analytical thinking while working in a dynamic team of professionals. The intern will be engaged for a period of 4 months starting January 2025, with a possibility of extension based on performance.",
-        responsibilities: communication_responsibilities,
-        skills: communication_skills,
-        work_period: "Full-time",
-        workmode: "Remote",
-        position: "Internship",
-        what_you_get: what_you_get,
-    }
+    // {
+    //     id: "0",
+    //     title: "Communication and Business Development Intern",
+    //     overview: "In this role, we are looking for a results-driven young professional (recent graduate) with a background in Journalism, Corporate Communications, Public Relations and other relevant fields in communication. The intern brings a unique blend of creativity and analytical thinking while working in a dynamic team of professionals. The intern will be engaged for a period of 4 months starting January 2025, with a possibility of extension based on performance.",
+    //     responsibilities: communication_responsibilities,
+    //     skills: communication_skills,
+    //     work_period: "Full-time",
+    //     workmode: "Remote",
+    //     position: "Internship",
+    //     what_you_get: what_you_get,
+    // }
 ]
 
 // export const REACT_PUBLIC_API_HOST = "http://localhost:8000"
